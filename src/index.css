@@ -42,16 +42,30 @@ body {
 .widget::before {
   content: "";
   position: absolute;
-  inset: 0px;
+  inset: -1px;
   background-image: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
-  border-radius: var(--gap);
+  border-radius: calc(var(--gap) + 1px);
   z-index: -1;
+  opacity: 0;
   transition: all 0.2s ease-out;
 }
 
 .widget:hover::before {
-  inset: -1px;
-  border-radius: calc(var(--gap) + 2px);
+  opacity: 1;
 }
 
+.widget::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background-image: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
+  border-radius: calc(var(--gap) + 1px);
+  z-index: -1;
+  opacity: 0;
+  filter: blur(.5rem);
+  transition: all 0.2s ease-out;
+}
 
+.widget:hover::after {
+  opacity: .6;
+}

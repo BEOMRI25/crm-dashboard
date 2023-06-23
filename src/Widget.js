@@ -8,7 +8,7 @@ export default function Widget() {
     const styles = isExpanded ? {maxWidth: "initial", maxHeight: "initial"} : {}
     return (
         <motion.div className="widget" style={styles} whileHover='hover' >
-            <Glow borderRadius="1.5rem" />
+            <Glow borderRadius="calc(1.5rem + 1px)" />
             <WidgetTitle />
             <button onClick={() => setIsExpended(!isExpanded)}>Toggle Expand</button>
         </motion.div>

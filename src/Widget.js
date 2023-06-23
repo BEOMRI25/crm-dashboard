@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Glow from "./Glow"
+import WidgetTitle from "./WidgetTitle"
 
 export default function Widget() {
     const [isExpanded, setIsExpended] = useState(false)
@@ -7,6 +8,7 @@ export default function Widget() {
     return (
         <div className="widget" style={styles} >
             <Glow borderRadius="1.5rem" />
+            <WidgetTitle />
             <button onClick={() => setIsExpended(!isExpanded)}>Toggle Expand</button>
         </div>
     )

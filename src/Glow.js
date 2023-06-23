@@ -1,11 +1,17 @@
 import { motion } from "framer-motion"
 
+const glowVariants = {
+    hover: {
+        opacity: 1
+    }
+}
+
 export default function Glow({ borderRadius }) {
     return (
-        <div className="glow-container">
-            <motion.div style={{ borderRadius: borderRadius }} whileHover={{ opacity: 1 }}></motion.div>
-            <motion.div style={{ borderRadius: borderRadius }} whileHover={{ opacity: 1 }}></motion.div>
-            <motion.div style={{ borderRadius: borderRadius }} whileHover={{ opacity: 0.5 }}></motion.div>
-        </div>
+        <motion.div className="glow-container" variants={glowVariants}>
+            <div style={{ borderRadius: borderRadius }}></div>
+            <div style={{ borderRadius: borderRadius }}></div>
+            <div style={{ borderRadius: borderRadius }}></div>
+        </motion.div>
     )
 }

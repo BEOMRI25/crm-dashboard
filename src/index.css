@@ -6,6 +6,7 @@
   --accent-blue: #00AAFF;
   --accent-purple: #8080FF;
   --accent-pink: #F249BA;
+  --accent-gradient-diagonal: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
 }
 
 *, *::before, *::after {
@@ -39,33 +40,24 @@ body {
   position: relative;
 }
 
-.widget::before {
-  content: "";
-  position: absolute;
+.glow-container {
   inset: -1px;
-  background-image: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
-  border-radius: calc(var(--gap) + 1px);
   z-index: -1;
-  opacity: 0;
-  transition: all 0.2s ease-out;
-}
-
-.widget:hover::before {
-  opacity: 1;
-}
-
-.widget::after {
-  content: "";
   position: absolute;
-  inset: -1px;
-  background-image: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
-  border-radius: calc(var(--gap) + 1px);
-  z-index: -1;
-  opacity: 0;
-  filter: blur(.5rem);
-  transition: all 0.2s ease-out;
 }
 
-.widget:hover::after {
-  opacity: .6;
+.glow-container > * {
+  position: absolute;
+  inset: 0;
+  background-image: var(--accent-gradient-diagonal);
+  opacity: 0;
 }
+
+.glow-container > div:nth-of-type(2) {
+  filter: blur(0.5rem);
+}
+
+.glow-container > div:nth-of-type(3) {
+  filter: blur(1.5rem);
+}
+

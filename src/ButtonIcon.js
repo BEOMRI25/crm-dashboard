@@ -1,5 +1,8 @@
 export default function ButtonIcon({ icon }) {
     return (
-        <img src={`./icons/${icon}.svg`} alt="" />
+        <svg>
+            <use href={`./icons/${icon}.svg#${icon}`}></use>
+        </svg>
+        // <img src={`./icons/${icon}.svg`} alt="" />
     )
 }

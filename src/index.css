@@ -79,6 +79,10 @@ body {
   border-radius: var(--gap) var(--gap) 0 0;
 }
 
+.widget-title[data-expanded=true] {
+  padding-inline: 1.5rem;
+}
+
 .widget-title > img {
   position: absolute;
   left: 0.75rem;
@@ -117,3 +121,12 @@ body {
 .button.secondary * {
   color: var(--white);
 }
+
+.widget-title[data-expanded=true] > .actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 0.5rem;
+}
+

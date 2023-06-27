@@ -130,3 +130,18 @@ body {
   gap: 0.5rem;
 }
 
+.widget-title > .navigation {
+  width: 100%;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-inline: 0.75rem;
+  font-size: 0.875rem;
+  height: 2.25rem;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: var(--primary-positive-layer);
+}

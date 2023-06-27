@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 
 const glowVariants = {
     hover: {
@@ -12,14 +12,16 @@ const glowVariants = {
 
 export default function Glow() {
     const glowContainer = useRef(null)
+    const [borderRadius, setBorderRadius] = useState(null)
     useEffect(() => {
-        console.log(glowContainer)
-    })
+        const parentStyles = getComputedStyle(glowContainer.current.parentElement)
+        setBorderRadius(`calc(${parentStyles.getPropertyValue("border-radius")} + 1px)`)
+    }, [])
     return (
         <motion.div className="glow-container" variants={glowVariants} ref={glowContainer}>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div style={{ borderRadius: borderRadius }}></div>
+            <div style={{ borderRadius: borderRadius }}></div>
+            <div style={{ borderRadius: borderRadius }}></div>
         </motion.div>
     )
 }

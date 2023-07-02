@@ -165,7 +165,7 @@ input[type=search] {
   border-radius: var(--small);
   border: none;
   height: var(--input-height);
-  padding-inline: var(--medium);
+  padding-inline: var(--medium) var(--input-height);
   background-color: var(--primary-negative);
   font-size: 1rem;
 }

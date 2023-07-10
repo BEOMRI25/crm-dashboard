@@ -11,8 +11,8 @@ const glowVariants = {
 }
 
 export default function Glow() {
-    const glowContainer = useRef(null)
-    const [borderRadius, setBorderRadius] = useState(null)
+    const glowContainer = useRef()
+    const [borderRadius, setBorderRadius] = useState()
     useEffect(() => {
         const parentStyles = getComputedStyle(glowContainer.current.parentElement)
         setBorderRadius(`calc(${parentStyles.getPropertyValue("border-radius")} + 1px)`)

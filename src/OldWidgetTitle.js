@@ -3,9 +3,9 @@ import Button from "./Button"
 import BackButton from "./BackButton"
 import SearchField from "./SearchField"
 import { useContext } from "react"
-import { WidgetSizeContext, widgetSizeDispatchContext } from "./Widget"
+import { WidgetSizeContext, widgetSizeDispatchContext } from "./OldWidget"
 
-export default function WidgetTitle() {
+export default function OldWidgetTitle() {
     const widgetSize = useContext(WidgetSizeContext)
     const dispatch = useContext(widgetSizeDispatchContext)
     return (

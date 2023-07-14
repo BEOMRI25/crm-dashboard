@@ -1,0 +1,8 @@
+.widget-title {
+    background-color: var(--primary-positive-layer);
+    padding-inline: var(--medium);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: calc(88 * var(--vw-basis));
+}

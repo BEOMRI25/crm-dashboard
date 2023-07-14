@@ -21,7 +21,7 @@ function reducer(widgetSize, actions) {
     }
 }
 
-export default function Widget() {
+export default function OldWidget() {
     const [widgetSize, dispatch] = useReducer(reducer, "small")
     const styles = widgetSize === "large" ? {maxWidth: "initial", maxHeight: "initial"} : {}
     return (

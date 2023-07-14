@@ -1,0 +1,15 @@
+.widget-container {
+    width: 100%;
+    height: calc(100% + var(--medium));
+    padding: var(--medium);
+    border-radius: var(--medium);
+    background-color: var(--primary-positive-layer);
+    display: grid;
+    gap: var(--medium);
+}
+
+.widget-container:has(> .widget:nth-of-type(2)) {
+    height: 100%;
+    grid-template-columns: 1fr 1.25fr 1fr;
+    grid-template-rows: 1fr 1.25fr;
+}

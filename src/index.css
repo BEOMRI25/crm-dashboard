@@ -41,9 +41,6 @@ body {
 #root {
   height: 100vh;
   height: 100svh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: calc(var(--medium) * 5) var(--medium) calc(var(--medium) * 2) var(--medium);
 }
 

@@ -1,0 +1,7 @@
+.button > svg {
+  width: calc(20 * var(--vw-basis));
+  height: calc(20 * var(--vw-basis));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

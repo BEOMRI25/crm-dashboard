@@ -1,0 +1,9 @@
+.widget-title-actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.widget:only-child .widget-title-actions {
+  width: 100%;
+}

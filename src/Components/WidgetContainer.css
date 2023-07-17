@@ -1,17 +1,19 @@
 .widget-container {
-    width: 100%;
-    height: 100%;
-    padding: var(--medium);
-    border-radius: var(--medium);
-    background-color: var(--primary-positive-layer);
-    display: grid;
-    gap: var(--medium);
-    grid-template-columns: 1fr 1.25fr 1fr;
-    grid-template-rows: 1fr 1.25fr;
+  width: 100%;
+  height: 100%;
+  padding: var(--medium);
+  border-radius: var(--medium);
+  background-color: var(--primary-positive-layer);
+  display: grid;
+  gap: var(--medium);
+  grid-template-columns: 1fr 1.25fr 1fr;
+  grid-template-rows: 1fr 1.25fr;
 }
 
 .widget-container:has(> .widget:only-child) {
-    height: calc(100% + var(--medium));
-    grid-template-columns: initial;
-    grid-template-rows: initial;
+  height: calc(100% + var(--medium));
+  grid-template-columns: initial;
+  grid-template-rows: initial;
+  padding: 0;
+  background-color: transparent;
 }

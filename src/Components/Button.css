@@ -1,0 +1,25 @@
+.button {
+  width: var(--input-height);
+  height: var(--input-height);
+  border-radius: var(--x-small);
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button.primary {
+  background-color: var(--accent-green);
+}
+
+.button.primary * {
+  color: var(--primary-40);
+}
+
+.button.secondary {
+  background-color: var(--primary-positive-layer);
+}
+
+.button.secondary * {
+  color: var(--white);
+}

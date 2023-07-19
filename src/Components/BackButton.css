@@ -1,0 +1,17 @@
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: var(--small);
+  padding-inline: calc(12 * var(--vw-basis));
+  font-size: calc(14 * var(--vw-basis));
+  height: var(--input-height);
+  border-radius: var(--x-small);
+  border: none;
+  background-color: var(--primary-positive-layer);
+}
+
+.back-button > svg {
+  width: calc(12 * var(--vw-basis));
+  height: calc(12 * var(--vw-basis));
+  color: var(--neutral-light);
+}

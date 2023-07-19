@@ -2,6 +2,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
+  gap: var(--small);
 }
 
 .widget:only-child .widget-title-actions {

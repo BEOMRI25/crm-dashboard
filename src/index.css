@@ -15,13 +15,7 @@
   --accent-blue: #00aaff;
   --accent-purple: #8080ff;
   --accent-pink: #f249ba;
-  --accent-gradient-diagonal: linear-gradient(
-    to bottom left,
-    var(--accent-green),
-    var(--accent-blue),
-    var(--accent-purple),
-    var(--accent-pink)
-  );
+  --accent-gradient-diagonal: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
 
   /* Colors - Neutral */
   --neutral-light: white;
@@ -30,7 +24,7 @@
   --x-small: calc(4 * var(--vw-basis));
   --small: calc(8 * var(--vw-basis));
   --medium: calc(24 * var(--vw-basis));
-  --input-height: calc(32 * var(--vw-basis));
+  --input-height: calc(36 * var(--vw-basis));
 }
 
 *,
@@ -51,8 +45,7 @@ body {
 #root {
   height: 100vh;
   height: 100svh;
-  padding: calc(var(--medium) * 5) var(--medium) calc(var(--medium) * 2)
-    var(--medium);
+  padding: calc(var(--medium) * 5) var(--medium) calc(var(--medium) * 2) var(--medium);
 }
 
 .heading-medium {
@@ -100,56 +93,6 @@ body {
   align-items: center;
   justify-content: end;
   gap: var(--medium);
-}
-
-.widget-title > .navigation {
-  width: 100%;
-}
-
-.back-button {
-  display: flex;
-  align-items: center;
-  gap: var(--medium);
-  padding-inline: 0.75rem;
-  font-size: 0.875rem;
-  height: 2.25rem;
-  border-radius: var(--small);
-  border: none;
-  background-color: var(--primary-positive-layer);
-}
-
-input[type='search'] {
-  border-radius: var(--small);
-  border: none;
-  height: var(--input-height);
-  padding-inline: var(--medium) var(--input-height);
-  background-color: var(--primary-negative);
-  font-size: 1rem;
-}
-
-input[type='search']::placeholder {
-  color: var(--primary-top);
-}
-
-input[type='search']:focus {
-  outline: 1px solid var(--primary-top);
-}
-
-input[type='search']::-webkit-search-cancel-button {
-  display: none;
-}
-
-label:has(> input[type='search']) {
-  position: relative;
-}
-
-label:has(> input[type='search']) > svg {
-  position: absolute;
-  width: 0.6rem;
-  height: 0.6rem;
-  top: calc(var(--input-height) / 2);
-  left: calc(var(--input-height) / 2);
-  transform: translate(-50%, -50%);
 }
 
 .widget-content {

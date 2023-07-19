@@ -6,6 +6,7 @@
   /* Colors - Primary */
   --primary-base: rgba(31, 34, 51, 1);
   --primary-positive-layer: rgba(153, 170, 255, 0.1);
+  --primary-double-positive-layer: rgba(153, 170, 255, 0.2);
   --primary-top: rgba(153, 170, 255, 1);
   --primary-negative: rgba(0, 0, 0, 0.15);
   --primary-40: rgba(61, 68, 102, 1);
@@ -77,14 +78,6 @@ body {
 
 .widget-title[data-expanded='true'] {
   padding-inline: var(--large);
-}
-
-.widget-title > img {
-  position: absolute;
-  left: 0.75rem;
-  top: -0.75rem;
-  bottom: -0.75rem;
-  height: calc(100% + 1.5rem);
 }
 
 .widget-title[data-expanded='true'] > .actions {

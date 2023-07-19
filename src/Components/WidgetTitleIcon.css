@@ -1,0 +1,5 @@
+.widget-title-icon {
+  height: calc(100% + (24 * var(--vw-basis)));
+  margin-inline-start: auto;
+  margin-inline-end: calc(-12 * var(--vw-basis));
+}

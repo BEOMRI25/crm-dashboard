@@ -6,4 +6,5 @@
   align-items: center;
   height: calc(88 * var(--vw-basis));
   gap: var(--medium);
+  border-radius: var(--medium) var(--medium) 0 0;
 }

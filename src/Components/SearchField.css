@@ -6,7 +6,7 @@ input[type='search'] {
   background-color: var(--primary-negative);
   font-size: calc(16 * var(--vw-basis));
   width: calc(150 * var(--vw-basis));
-  transition: all 0.2s ease;
+  transition: width 0.2s ease;
 }
 
 input[type='search']::placeholder {

@@ -7,17 +7,25 @@ import WidgetTitleHeading from '../Components/WidgetTitleHeading'
 import './CalendarWidget.css'
 import SearchField from '../Components/SearchField'
 import WidgetTitleNavigation from '../Components/WidgetTitleNavigation'
+import calendarIcon from '../img/calendar-icon.png'
+import WidgetTitleIcon from '../Components/WidgetTitleIcon'
+import BackButton from '../Components/BackButton'
 
 export default function CalendarWidget({ fullScreen }) {
   return (
     <Widget id='calendar'>
       <WidgetTitle>
-        {fullScreen && <WidgetTitleNavigation />}
+        {fullScreen && (
+          <WidgetTitleNavigation>
+            <BackButton />
+          </WidgetTitleNavigation>
+        )}
         <WidgetTitleHeading heading='יומן' />
         <WidgetTitleActions>
           {fullScreen && <SearchField />}
           <Button level='primary' icon='plus' />
         </WidgetTitleActions>
+        {!fullScreen && <WidgetTitleIcon icon={calendarIcon} />}
       </WidgetTitle>
       <Link to='/calendar'>Go To Calendar</Link>
       <Link to='/'>Go Home</Link>

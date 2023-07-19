@@ -8,10 +8,23 @@
   border-radius: var(--x-small);
   border: none;
   background-color: var(--primary-positive-layer);
+  cursor: pointer;
 }
 
 .back-button > svg {
   width: calc(12 * var(--vw-basis));
   height: calc(12 * var(--vw-basis));
   color: var(--neutral-light);
+}
+
+.back-button:hover {
+  background-color: var(--primary-double-positive-layer);
+}
+
+.back-button:active {
+  background-color: var(--primary-positive-layer);
+}
+
+.back-button:focus {
+  outline: 1px solid var(--primary-top);
 }

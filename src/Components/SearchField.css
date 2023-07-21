@@ -3,7 +3,7 @@ input[type='search'] {
   border: none;
   height: var(--input-height);
   padding-inline: var(--small) var(--input-height);
-  background-color: var(--primary-negative);
+  background-color: var(--primary-negative-layer);
   font-size: calc(16 * var(--vw-basis));
   width: calc(150 * var(--vw-basis));
   transition: width 0.2s ease;

@@ -12,6 +12,8 @@ import WidgetTitleIcon from '../Components/WidgetTitleIcon'
 import BackButton from '../Components/BackButton'
 import WidgetContent from '../Components/WidgetContent'
 import WidgetContentNavigation from '../Components/WidgetContentNavigation'
+import Tabs from '../Components/Tabs'
+import Tab from '../Components/Tab'
 
 export default function CalendarWidget({ fullScreen }) {
   return (
@@ -30,7 +32,13 @@ export default function CalendarWidget({ fullScreen }) {
         {!fullScreen && <WidgetTitleIcon icon={calendarIcon} />}
       </WidgetTitle>
       <WidgetContent>
-        <WidgetContentNavigation />
+        <WidgetContentNavigation>
+          <Tabs>
+            <Tab title='יומי' active={true} />
+            <Tab title='שבועי' active={false} />
+            <Tab title='חודשי' active={false} />
+          </Tabs>
+        </WidgetContentNavigation>
         <Link to='/calendar'>Go To Calendar</Link>
         <Link to='/'>Go Home</Link>
       </WidgetContent>

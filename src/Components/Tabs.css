@@ -1,0 +1,7 @@
+.tabs {
+  border-radius: var(--x-small);
+  background-color: var(--primary-negative-layer);
+  display: flex;
+  padding: var(--x-small);
+  width: 100%;
+}

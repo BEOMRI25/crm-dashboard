@@ -1,5 +1,4 @@
 .widget-content-navigation {
   display: flex;
-  align-items: center;
   gap: var(--small);
 }

@@ -1,0 +1,12 @@
+.tab {
+  border-radius: var(--x-small);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--small);
+  padding-block: var(--small);
+  min-height: var(--row-height);
+  font-size: calc(14 * var(--vw-basis));
+}

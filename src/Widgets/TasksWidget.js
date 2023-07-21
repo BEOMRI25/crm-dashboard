@@ -12,6 +12,9 @@ import WidgetTitleIcon from '../Components/WidgetTitleIcon'
 import clipBoardIcon from '../img/clipboard-icon.png'
 import WidgetContent from '../Components/WidgetContent'
 import WidgetContentNavigation from '../Components/WidgetContentNavigation'
+import Tabs from '../Components/Tabs'
+import Tab from '../Components/Tab'
+import { useState } from 'react'
 
 export default function TasksWidget({ fullScreen }) {
   return (
@@ -31,7 +34,14 @@ export default function TasksWidget({ fullScreen }) {
         {!fullScreen && <WidgetTitleIcon icon={clipBoardIcon} />}
       </WidgetTitle>
       <WidgetContent>
-        <WidgetContentNavigation />
+        <WidgetContentNavigation>
+          <Tabs>
+            <Tab title='הכל' active={true} />
+            <Tab title='היום' active={false} />
+            <Tab title='עתידיות' active={false} />
+            <Tab title='פג תוקף' active={false} />
+          </Tabs>
+        </WidgetContentNavigation>
         <Link to='/tasks'>Go To Tasks</Link>
         <Link to='/'>Go Home</Link>
       </WidgetContent>

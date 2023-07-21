@@ -1,0 +1,27 @@
+.glow-container {
+  inset: -1px;
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.glow-container > * {
+  position: absolute;
+  inset: 0;
+  background-image: var(--accent-gradient-diagonal);
+}
+
+.glow-container > div:nth-of-type(2) {
+  filter: blur(var(--small));
+}
+
+.glow-container > div:nth-of-type(3) {
+  filter: blur(var(--medium));
+  opacity: 0.5;
+}
+
+*:has(> .glow-container):hover > .glow-container {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+}

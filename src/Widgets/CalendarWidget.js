@@ -10,6 +10,8 @@ import WidgetTitleNavigation from '../Components/WidgetTitleNavigation'
 import calendarIcon from '../img/calendar-icon.png'
 import WidgetTitleIcon from '../Components/WidgetTitleIcon'
 import BackButton from '../Components/BackButton'
+import WidgetContent from '../Components/WidgetContent'
+import WidgetContentNavigation from '../Components/WidgetContentNavigation'
 
 export default function CalendarWidget({ fullScreen }) {
   return (
@@ -27,8 +29,11 @@ export default function CalendarWidget({ fullScreen }) {
         </WidgetTitleActions>
         {!fullScreen && <WidgetTitleIcon icon={calendarIcon} />}
       </WidgetTitle>
-      <Link to='/calendar'>Go To Calendar</Link>
-      <Link to='/'>Go Home</Link>
+      <WidgetContent>
+        <WidgetContentNavigation />
+        <Link to='/calendar'>Go To Calendar</Link>
+        <Link to='/'>Go Home</Link>
+      </WidgetContent>
     </Widget>
   )
 }

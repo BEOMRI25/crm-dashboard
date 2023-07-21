@@ -1,4 +1,5 @@
 import Widget from '../Components/Widget'
+import WidgetContent from '../Components/WidgetContent'
 import WidgetTitle from '../Components/WidgetTitle'
 import WidgetTitleHeading from '../Components/WidgetTitleHeading'
 import WidgetTitleIcon from '../Components/WidgetTitleIcon'
@@ -11,6 +12,7 @@ export default function InspirationWidget() {
         <WidgetTitleHeading heading='השראה יומית' />
         <WidgetTitleIcon icon={megaphoneIcon} />
       </WidgetTitle>
+      <WidgetContent />
     </Widget>
   )
 }

@@ -10,6 +10,8 @@ import WidgetTitleNavigation from '../Components/WidgetTitleNavigation'
 import BackButton from '../Components/BackButton'
 import WidgetTitleIcon from '../Components/WidgetTitleIcon'
 import clipBoardIcon from '../img/clipboard-icon.png'
+import WidgetContent from '../Components/WidgetContent'
+import WidgetContentNavigation from '../Components/WidgetContentNavigation'
 
 export default function TasksWidget({ fullScreen }) {
   return (
@@ -28,8 +30,11 @@ export default function TasksWidget({ fullScreen }) {
         </WidgetTitleActions>
         {!fullScreen && <WidgetTitleIcon icon={clipBoardIcon} />}
       </WidgetTitle>
-      <Link to='/tasks'>Go To Tasks</Link>
-      <Link to='/'>Go Home</Link>
+      <WidgetContent>
+        <WidgetContentNavigation />
+        <Link to='/tasks'>Go To Tasks</Link>
+        <Link to='/'>Go Home</Link>
+      </WidgetContent>
     </Widget>
   )
 }

@@ -5,10 +5,19 @@ export default function Glow() {
   const glowContainer = useRef()
   const [borderRadius, setBorderRadius] = useState()
   useLayoutEffect(() => {
-    const parentStyles = getComputedStyle(glowContainer.current.parentElement)
-    setBorderRadius(`calc(${parentStyles.getPropertyValue('border-radius')} + 1px)`)
-    if (parentStyles.getPropertyValue('position') === 'static') {
-      glowContainer.current.parentElement.style.position = 'relative'
+    const styleSheets = document.styleSheets
+    for (let sheet of styleSheets) {
+      if (!sheet.href) {
+        for (let rule of sheet.cssRules) {
+          if (rule.selectorText === `.${glowContainer.current.parentElement.className}`) {
+            setBorderRadius(`calc(${rule.style.borderRadius} + 1px)`)
+            if (rule.style.position === 'static' || rule.style.position === '') {
+              glowContainer.current.parentElement.style.position = 'relative'
+            }
+            break
+          }
+        }
+      }
     }
   }, [])
   return (

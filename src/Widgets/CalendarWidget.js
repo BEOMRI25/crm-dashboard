@@ -12,8 +12,17 @@ import WidgetTitleIcon from '../Components/WidgetTitleIcon'
 import BackButton from '../Components/BackButton'
 import WidgetContent from '../Components/WidgetContent'
 import WidgetContentNavigation from '../Components/WidgetContentNavigation'
+import Tabs from '../Components/Tabs'
+import Tab from '../Components/Tab'
+import { useState } from 'react'
 
 export default function CalendarWidget({ fullScreen }) {
+  const tabs = [
+    { id: 1, title: 'יומי' },
+    { id: 2, title: 'שבועי' },
+    { id: 3, title: 'חודשי' },
+  ]
+  const [activeTab, setActiveTab] = useState(tabs[0].title)
   return (
     <Widget id='calendar'>
       <WidgetTitle>
@@ -30,7 +39,13 @@ export default function CalendarWidget({ fullScreen }) {
         {!fullScreen && <WidgetTitleIcon icon={calendarIcon} />}
       </WidgetTitle>
       <WidgetContent>
-        <WidgetContentNavigation></WidgetContentNavigation>
+        <WidgetContentNavigation>
+          <Tabs>
+            {tabs.map(tab => {
+              return <Tab key={tab.id} title={tab.title} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
+            })}
+          </Tabs>
+        </WidgetContentNavigation>
         <Link to='/calendar'>Go To Calendar</Link>
         <Link to='/'>Go Home</Link>
       </WidgetContent>

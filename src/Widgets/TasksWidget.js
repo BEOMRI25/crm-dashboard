@@ -23,7 +23,7 @@ export default function TasksWidget({ fullScreen }) {
     { id: 3, title: 'עתידיות' },
     { id: 4, title: 'פג תוקף' },
   ]
-  const [activeTab, setActiveTab] = useState(1)
+  const [activeTab, setActiveTab] = useState(tabs[0].title)
   return (
     <Widget id='tasks'>
       <WidgetTitle>
@@ -42,7 +42,11 @@ export default function TasksWidget({ fullScreen }) {
       </WidgetTitle>
       <WidgetContent>
         <WidgetContentNavigation>
-          <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Tabs>
+            {tabs.map(tab => {
+              return <Tab key={tab.id} title={tab.title} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
+            })}
+          </Tabs>
         </WidgetContentNavigation>
         <Link to='/tasks'>Go To Tasks</Link>
         <Link to='/'>Go Home</Link>

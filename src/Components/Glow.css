@@ -4,12 +4,14 @@
   position: absolute;
   opacity: 0;
   transition: opacity 0.2s ease-out;
+  border-radius: inherit;
 }
 
 .glow-container > * {
   position: absolute;
   inset: 0;
   background-image: var(--accent-gradient-diagonal);
+  border-radius: inherit;
 }
 
 .glow-container > div:nth-of-type(2) {

@@ -17,6 +17,13 @@ import Tab from '../Components/Tab'
 import { useState } from 'react'
 
 export default function TasksWidget({ fullScreen }) {
+  const tabs = [
+    { id: 1, title: 'הכל' },
+    { id: 2, title: 'היום' },
+    { id: 3, title: 'עתידיות' },
+    { id: 4, title: 'פג תוקף' },
+  ]
+  const [activeTab, setActiveTab] = useState(1)
   return (
     <Widget id='tasks'>
       <WidgetTitle>
@@ -35,12 +42,7 @@ export default function TasksWidget({ fullScreen }) {
       </WidgetTitle>
       <WidgetContent>
         <WidgetContentNavigation>
-          <Tabs>
-            <Tab title='הכל' active={true} />
-            <Tab title='היום' active={false} />
-            <Tab title='עתידיות' active={false} />
-            <Tab title='פג תוקף' active={false} />
-          </Tabs>
+          <Tabs tabs={tabs} activeTab={activeTab} setActiveTab={setActiveTab} />
         </WidgetContentNavigation>
         <Link to='/tasks'>Go To Tasks</Link>
         <Link to='/'>Go Home</Link>

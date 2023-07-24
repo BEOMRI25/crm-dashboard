@@ -21,6 +21,9 @@
   /* Colors - Neutral */
   --neutral-light: white;
 
+  /* Colors - Semantic */
+  --semantic-danger: rgba(191, 67, 67, 1);
+
   /* Units */
   --x-small: calc(4 * var(--vw-basis));
   --small: calc(8 * var(--vw-basis));

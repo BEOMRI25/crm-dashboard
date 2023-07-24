@@ -12,3 +12,7 @@
   cursor: pointer;
   user-select: none;
 }
+
+.tab.active {
+  background-color: var(--primary-double-positive-layer);
+}

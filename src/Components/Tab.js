@@ -1,13 +1,14 @@
+import Badge from './Badge'
 import './Tab.css'
 
-export default function Tab({ children, active, title, onClick }) {
-  const styles = {
-    backgroundColor: active ? 'var(--primary-double-positive-layer)' : 'transparent',
-  }
+export default function Tab({ children, active, title, onClick, badge }) {
   return (
-    <div className='tab' style={styles} onClick={onClick}>
+    <div className={`tab ${active && 'active'}`} onClick={onClick}>
       {children}
-      <span>{title}</span>
+      <span>
+        {title}
+        {badge && <Badge badge={badge} />}
+      </span>
     </div>
   )
 }

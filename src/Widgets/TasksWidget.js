@@ -18,10 +18,10 @@ import { useState } from 'react'
 
 export default function TasksWidget({ fullScreen }) {
   const tabs = [
-    { id: 1, title: 'הכל' },
-    { id: 2, title: 'היום' },
-    { id: 3, title: 'עתידיות' },
-    { id: 4, title: 'פג תוקף' },
+    { id: 1, title: 'הכל', badge: { count: 7, danger: false } },
+    { id: 2, title: 'היום', badge: { count: 3, danger: false } },
+    { id: 3, title: 'עתידיות', badge: { count: 2, danger: false } },
+    { id: 4, title: 'פג תוקף', badge: { count: 1, danger: true } },
   ]
   const [activeTab, setActiveTab] = useState(tabs[0].title)
   return (
@@ -44,7 +44,7 @@ export default function TasksWidget({ fullScreen }) {
         <WidgetContentNavigation>
           <Tabs>
             {tabs.map(tab => {
-              return <Tab key={tab.id} title={tab.title} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
+              return <Tab key={tab.id} title={tab.title} badge={tab.badge} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
             })}
           </Tabs>
         </WidgetContentNavigation>

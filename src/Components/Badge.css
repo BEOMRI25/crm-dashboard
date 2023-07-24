@@ -1,0 +1,18 @@
+.badge {
+  padding: calc(5 * var(--vw-basis)) calc(7 * var(--vw-basis));
+  background-color: var(--primary-double-positive-layer);
+  border-radius: var(--x-small);
+  margin-inline-start: var(--small);
+  font-weight: 700;
+}
+
+.badge.danger,
+.tab.active .badge.danger {
+  background-color: var(--semantic-danger);
+  color: var(--neutral-light);
+}
+
+.tab.active .badge {
+  background-color: var(--neutral-light);
+  color: var(--primary-40);
+}

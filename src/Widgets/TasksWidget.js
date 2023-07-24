@@ -18,10 +18,10 @@ import { useState } from 'react'
 
 export default function TasksWidget({ fullScreen }) {
   const tabs = [
-    { id: 1, title: 'הכל', badge: { count: 7, danger: false } },
-    { id: 2, title: 'היום', badge: { count: 3, danger: false } },
-    { id: 3, title: 'עתידיות', badge: { count: 2, danger: false } },
-    { id: 4, title: 'פג תוקף', badge: { count: 1, danger: true } },
+    { id: 1, title: 'הכל', badge: { count: 7 } },
+    { id: 2, title: 'היום', badge: { count: 3, semantic: 'success' } },
+    { id: 3, title: 'עתידיות', badge: { count: 2 } },
+    { id: 4, title: 'פג תוקף', badge: { count: 1, semantic: 'danger' } },
   ]
   const [activeTab, setActiveTab] = useState(tabs[0].title)
   return (

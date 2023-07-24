@@ -23,6 +23,7 @@
 
   /* Colors - Semantic */
   --semantic-danger: rgba(191, 67, 67, 1);
+  --semantic-success: #79f2ac;
 
   /* Units */
   --x-small: calc(4 * var(--vw-basis));

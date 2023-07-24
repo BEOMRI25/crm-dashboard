@@ -12,6 +12,12 @@
   color: var(--neutral-light);
 }
 
+.badge.success,
+.tab.active .badge.success {
+  background-color: var(--semantic-success);
+  color: var(--primary-40);
+}
+
 .tab.active .badge {
   background-color: var(--neutral-light);
   color: var(--primary-40);

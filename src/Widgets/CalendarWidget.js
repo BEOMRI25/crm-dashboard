@@ -15,6 +15,7 @@ import WidgetContentNavigation from '../Components/WidgetContentNavigation'
 import Tabs from '../Components/Tabs'
 import Tab from '../Components/Tab'
 import { useState } from 'react'
+import ButtonLink from '../Components/ButtonLink'
 
 export default function CalendarWidget({ fullScreen }) {
   const tabs = [
@@ -45,9 +46,8 @@ export default function CalendarWidget({ fullScreen }) {
               return <Tab key={tab.id} title={tab.title} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
             })}
           </Tabs>
+          {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/calendar' />}
         </WidgetContentNavigation>
-        <Link to='/calendar'>Go To Calendar</Link>
-        <Link to='/'>Go Home</Link>
       </WidgetContent>
     </Widget>
   )

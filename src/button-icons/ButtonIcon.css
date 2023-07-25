@@ -5,3 +5,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.widget-content-navigation > .button > svg {
+  width: calc(22 * var(--vw-basis));
+  height: calc(22 * var(--vw-basis));
+}

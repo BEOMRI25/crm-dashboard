@@ -7,6 +7,7 @@
   --primary-base: rgba(31, 34, 51, 1);
   --primary-positive-layer: rgba(153, 170, 255, 0.1);
   --primary-double-positive-layer: rgba(153, 170, 255, 0.2);
+  --primary-triple-positive-layer: rgba(153, 170, 255, 0.3);
   --primary-top: rgba(153, 170, 255, 1);
   --primary-negative-layer: rgba(0, 0, 0, 0.15);
   --primary-40: rgba(61, 68, 102, 1);

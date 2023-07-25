@@ -15,6 +15,7 @@ import WidgetContentNavigation from '../Components/WidgetContentNavigation'
 import Tabs from '../Components/Tabs'
 import Tab from '../Components/Tab'
 import { useState } from 'react'
+import ButtonLink from '../Components/ButtonLink'
 
 export default function TasksWidget({ fullScreen }) {
   const tabs = [
@@ -47,6 +48,7 @@ export default function TasksWidget({ fullScreen }) {
               return <Tab key={tab.id} title={tab.title} badge={tab.badge} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
             })}
           </Tabs>
+          <ButtonLink level='secondary' icon='expand' to='/tasks' />
         </WidgetContentNavigation>
         <Link to='/tasks'>Go To Tasks</Link>
         <Link to='/'>Go Home</Link>

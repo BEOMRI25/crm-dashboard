@@ -1,13 +1,16 @@
-import Excel from './Excel'
-import Plus from './Plus'
+import ExcelIcon from './ExcelIcon'
+import PlusIcon from './PlusIcon'
 import './ButtonIcon.css'
+import ExpandIcon from './ExpandIcon'
 
 function getIconComponent(iconName) {
   switch (iconName) {
     case 'plus':
-      return <Plus />
+      return <PlusIcon />
     case 'excel':
-      return <Excel />
+      return <ExcelIcon />
+    case 'expand':
+      return <ExpandIcon />
   }
 }
 

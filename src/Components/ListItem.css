@@ -1,0 +1,11 @@
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--small);
+  border-radius: var(--x-small);
+  padding: calc(10 * var(--vw-basis));
+  padding-inline-start: calc(20 * var(--vw-basis));
+  background-color: var(--primary-positive-layer);
+  height: var(--row-height);
+  font-size: calc(18 * var(--vw-basis));
+}

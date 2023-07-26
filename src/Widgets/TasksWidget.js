@@ -17,6 +17,7 @@ import Tab from '../Components/Tab'
 import { useState } from 'react'
 import ButtonLink from '../Components/ButtonLink'
 import List from '../Components/List'
+import TaskListItem from '../Components/ListItems/TaskListItem'
 
 export default function TasksWidget({ fullScreen }) {
   const tabs = [
@@ -24,6 +25,38 @@ export default function TasksWidget({ fullScreen }) {
     { id: 2, title: 'היום', badge: { count: 3, semantic: 'success' } },
     { id: 3, title: 'עתידיות', badge: { count: 2 } },
     { id: 4, title: 'פג תוקף', badge: { count: 1, semantic: 'danger' } },
+  ]
+  const tasks = [
+    {
+      id: 1,
+      type: 'שיחה',
+      description: 'להתקשר ללקוחות שהשאירו פרטים',
+      time: new Date(2023, 6, 24, 0, 0, 0),
+      assignedUser: 'אני',
+      customer: 'שירי מזור',
+      product: 'סימפלאן מערכת מלאה - מנוי חודשי',
+      comment: 'הערה חשובה מאוד',
+    },
+    {
+      id: 2,
+      type: 'כללי',
+      description: 'לכתוב תסריט לארבעה סרטונים חדשים',
+      time: new Date(2023, 6, 25, 0, 0, 0),
+      assignedUser: 'אוראל ספיר',
+      customer: null,
+      product: 'מוצרי עבר CEO',
+      comment: 'לשאול רשימת שאלות',
+    },
+    {
+      id: 3,
+      type: 'פיננסי',
+      description: 'להעביר את התשלום לצוות הפיתוח',
+      time: new Date(2023, 6, 25, 8, 0, 0),
+      assignedUser: 'אני',
+      customer: 'הדר כץ',
+      product: null,
+      comment: null,
+    },
   ]
   const [activeTab, setActiveTab] = useState(tabs[0].title)
   return (
@@ -51,7 +84,11 @@ export default function TasksWidget({ fullScreen }) {
           </Tabs>
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}
         </WidgetContentNavigation>
-        <List />
+        <List>
+          {tasks.map(task => {
+            return <TaskListItem task={task} />
+          })}
+        </List>
       </WidgetContent>
     </Widget>
   )

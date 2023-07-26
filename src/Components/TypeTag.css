@@ -1,0 +1,12 @@
+.type-tag {
+  border-radius: var(--x-small);
+  font-weight: 700;
+  font-size: calc(14 * var(--vw-basis));
+  border: 1px solid var(--type-color);
+  height: calc(28 * var(--vw-basis));
+  width: calc(60 * var(--vw-basis));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--type-color-20);
+}

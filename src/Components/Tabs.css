@@ -4,4 +4,5 @@
   display: flex;
   padding: var(--x-small);
   width: 100%;
+  min-height: var(--row-height);
 }

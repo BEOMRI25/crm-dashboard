@@ -13,10 +13,14 @@
   --primary-40: rgba(61, 68, 102, 1);
 
   /* Colors - Accent */
-  --accent-green: #79f2ac;
-  --accent-blue: #00aaff;
-  --accent-purple: #8080ff;
-  --accent-pink: #f249ba;
+  --accent-green: rgba(121, 242, 172, 1);
+  --accent-green-20: rgba(121, 242, 172, 0.2);
+  --accent-blue: rgba(0, 170, 255, 1);
+  --accent-blue-20: rgba(0, 170, 255, 0.2);
+  --accent-purple: rgba(128, 128, 255, 1);
+  --accent-purple-20: rgba(128, 128, 255, 0.2);
+  --accent-pink: rgba(242, 73, 186, 1);
+  --accent-pink-20: rgba(242, 73, 186, 0.2);
   --accent-gradient-diagonal: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
 
   /* Colors - Neutral */
@@ -31,7 +35,7 @@
   --small: calc(8 * var(--vw-basis));
   --medium: calc(24 * var(--vw-basis));
   --input-height: calc(36 * var(--vw-basis));
-  --row-height: calc(40 * var(--vw-basis));
+  --row-height: calc(48 * var(--vw-basis));
 }
 
 *,
@@ -58,4 +62,24 @@ body {
 .heading-medium {
   font-size: calc(32 * var(--vw-basis));
   font-weight: 900;
+}
+
+.general {
+  --type-color: var(--accent-green);
+  --type-color-20: var(--accent-green-20);
+}
+
+.meeting {
+  --type-color: var(--accent-blue);
+  --type-color-20: var(--accent-blue-20);
+}
+
+.call {
+  --type-color: var(--accent-purple);
+  --type-color-20: var(--accent-purple-20);
+}
+
+.financial {
+  --type-color: var(--accent-pink);
+  --type-color-20: var(--accent-pink-20);
 }

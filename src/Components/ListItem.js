@@ -1,5 +1,12 @@
+import { forwardRef } from 'react'
 import './ListItem.css'
 
-export default function ListItem({ children }) {
-  return <li className='list-item'>{children}</li>
-}
+const ListItem = forwardRef(({ children }, ref) => {
+  return (
+    <li className='list-item' ref={ref}>
+      {children}
+    </li>
+  )
+})
+
+export default ListItem

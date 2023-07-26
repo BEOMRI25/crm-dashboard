@@ -9,3 +9,7 @@
   height: var(--row-height);
   font-size: calc(18 * var(--vw-basis));
 }
+
+.list-item > .description {
+  width: 100%;
+}

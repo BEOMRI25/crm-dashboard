@@ -1,0 +1,13 @@
+.list-item.danger {
+  background-color: var(--semantic-danger);
+}
+
+.list-item.danger .type-tag {
+  --type-color: var(--neutral-light);
+  --type-color-20: var(--neutral-light-20);
+}
+
+.list-item.danger .time-tag {
+  background-color: var(--neutral-light);
+  color: var(--semantic-danger);
+}

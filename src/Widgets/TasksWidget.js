@@ -31,7 +31,8 @@ export default function TasksWidget({ fullScreen }) {
       id: 1,
       type: 'שיחה',
       description: 'להתקשר ללקוחות שהשאירו פרטים',
-      time: new Date(2023, 6, 24, 0, 0, 0),
+      dateTime: new Date(2023, 6, 24),
+      displayTime: false,
       assignedUser: 'אני',
       customer: 'שירי מזור',
       product: 'סימפלאן מערכת מלאה - מנוי חודשי',
@@ -41,7 +42,8 @@ export default function TasksWidget({ fullScreen }) {
       id: 2,
       type: 'כללי',
       description: 'לכתוב תסריט לארבעה סרטונים חדשים',
-      time: new Date(2023, 6, 25, 0, 0, 0),
+      dateTime: new Date(2023, 6, 27),
+      displayTime: false,
       assignedUser: 'אוראל ספיר',
       customer: null,
       product: 'מוצרי עבר CEO',
@@ -51,11 +53,34 @@ export default function TasksWidget({ fullScreen }) {
       id: 3,
       type: 'פיננסי',
       description: 'להעביר את התשלום לצוות הפיתוח',
-      time: new Date(2023, 6, 25, 8, 0, 0),
+      dateTime: new Date(2023, 6, 21, 8, 0),
+      displayTime: true,
       assignedUser: 'אני',
       customer: 'הדר כץ',
       product: null,
       comment: null,
+    },
+    {
+      id: 4,
+      type: 'פגישה',
+      description: 'לקבוע פגישה עם אוראל ספיר',
+      dateTime: new Date(2023, 6, 26, 20, 0),
+      displayTime: true,
+      assignedUser: 'אני',
+      customer: 'ירדן סמואלוב',
+      product: null,
+      comment: 'לא לשכוח לקחת מסמכים',
+    },
+    {
+      id: 5,
+      type: 'כללי',
+      description: 'לכתוב את הבריף לפגישה של יום חמישי',
+      dateTime: null,
+      displayTime: false,
+      assignedUser: 'עמרי ברגמן',
+      customer: null,
+      product: 'מוצרי עבר CEO',
+      comment: 'הערה חשובה מאוד',
     },
   ]
   const [activeTab, setActiveTab] = useState(tabs[0].title)
@@ -86,7 +111,7 @@ export default function TasksWidget({ fullScreen }) {
         </WidgetContentNavigation>
         <List>
           {tasks.map(task => {
-            return <TaskListItem task={task} />
+            return <TaskListItem key={task.id} task={task} />
           })}
         </List>
       </WidgetContent>

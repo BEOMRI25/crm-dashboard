@@ -24,7 +24,8 @@
   --accent-gradient-diagonal: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
 
   /* Colors - Neutral */
-  --neutral-light: white;
+  --neutral-light: rgba(255, 255, 255, 1);
+  --neutral-light-20: rgba(255, 255, 255, 0.2);
 
   /* Colors - Semantic */
   --semantic-danger: rgba(191, 67, 67, 1);

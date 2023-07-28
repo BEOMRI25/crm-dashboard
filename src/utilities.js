@@ -32,10 +32,10 @@ export function formatDate(dateTime) {
   } else if (dateTime.getDate() === dayBeforeYesterday.getDate() && dateTime.getMonth() === dayBeforeYesterday.getMonth() && dateTime.getFullYear() === dayBeforeYesterday.getFullYear()) {
     return 'שלשום'
   } else {
-    return dateTime.toLocaleDateString('he-IL')
+    return dateTime.toLocaleDateString('he-IL', { month: 'long', day: 'numeric' })
   }
 }
 
 export function formatTime(dateTime) {
-  return dateTime.toLocaleTimeString('he-IL', { timeStyle: 'short' })
+  return dateTime.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })
 }

@@ -11,25 +11,19 @@ export function getTypeSubclass(type) {
   }
 }
 
-export function formatDate(dateTime) {
-  const today = getDateWithOffset(0)
-  const yesterday = getDateWithOffset(-1)
-  const tomorrow = getDateWithOffset(1)
-  const dayAfterTomorrow = getDateWithOffset(2)
-  const dayBeforeYesterday = getDateWithOffset(-2)
-  if (dateTime.getDate() === today.getDate() && dateTime.getMonth() === today.getMonth() && dateTime.getFullYear() === today.getFullYear()) {
-    return 'היום'
-  } else if (dateTime.getDate() === yesterday.getDate() && dateTime.getMonth() === yesterday.getMonth() && dateTime.getFullYear() === yesterday.getFullYear()) {
-    return 'אתמול'
-  } else if (dateTime.getDate() === tomorrow.getDate() && dateTime.getMonth() === tomorrow.getMonth() && dateTime.getFullYear() === tomorrow.getFullYear()) {
-    return 'מחר'
-  } else if (dateTime.getDate() === dayAfterTomorrow.getDate() && dateTime.getMonth() === dayAfterTomorrow.getMonth() && dateTime.getFullYear() === dayAfterTomorrow.getFullYear()) {
-    return 'מחרתיים'
-  } else if (dateTime.getDate() === dayBeforeYesterday.getDate() && dateTime.getMonth() === dayBeforeYesterday.getMonth() && dateTime.getFullYear() === dayBeforeYesterday.getFullYear()) {
-    return 'שלשום'
-  } else {
-    return dateTime.toLocaleDateString('he-IL', { month: 'long', day: 'numeric' })
+export function areDatesEqual(date1, date2) {
+  if (!date1 || !date2) {
+    return false
   }
+  return date1.getDate() === date2.getDate() && date1.getMonth() === date2.getMonth() && date1.getFullYear() === date2.getFullYear()
+}
+
+export function isFutureDate(date) {
+  return date !== null && new Date() < date
+}
+
+export function isPastDate(date) {
+  return date !== null && new Date() > date
 }
 
 export function getDateWithOffset(offset, hours, minutes, seconds, milliseconds) {
@@ -40,6 +34,27 @@ export function getDateWithOffset(offset, hours, minutes, seconds, milliseconds)
   if (milliseconds !== undefined) date.setMilliseconds(milliseconds)
   date.setDate(date.getDate() + offset)
   return date
+}
+
+export function formatDate(dateTime) {
+  const today = getDateWithOffset(0)
+  const yesterday = getDateWithOffset(-1)
+  const tomorrow = getDateWithOffset(1)
+  const dayAfterTomorrow = getDateWithOffset(2)
+  const dayBeforeYesterday = getDateWithOffset(-2)
+  if (areDatesEqual(dateTime, today)) {
+    return 'היום'
+  } else if (areDatesEqual(dateTime, yesterday)) {
+    return 'אתמול'
+  } else if (areDatesEqual(dateTime, tomorrow)) {
+    return 'מחר'
+  } else if (areDatesEqual(dateTime, dayAfterTomorrow)) {
+    return 'מחרתיים'
+  } else if (areDatesEqual(dateTime, dayBeforeYesterday)) {
+    return 'שלשום'
+  } else {
+    return dateTime.toLocaleDateString('he-IL', { month: 'long', day: 'numeric' })
+  }
 }
 
 export function formatTime(dateTime) {

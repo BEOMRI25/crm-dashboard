@@ -3,9 +3,10 @@ import ListItem from '../ListItem'
 import TimeTag from '../TimeTag'
 import TypeTag from '../TypeTag'
 import './TaskListItem.css'
+import { isPastDate } from '../../utilities'
 
 export default function TaskListItem({ task }) {
-  const isExpired = task.dateTime !== null && new Date() > task.dateTime
+  const isExpired = isPastDate(task.dateTime)
   const listItem = useRef()
   useLayoutEffect(() => {
     if (isExpired) {

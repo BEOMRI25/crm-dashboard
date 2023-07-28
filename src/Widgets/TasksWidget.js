@@ -18,6 +18,7 @@ import ButtonLink from '../Components/ButtonLink'
 import List from '../Components/List'
 import TaskListItem from '../Components/ListItems/TaskListItem'
 import { tasks } from '../data'
+import { areDatesEqual, compareDates, isFutureDate, isPastDate } from '../utilities'
 
 export default function TasksWidget({ fullScreen }) {
   const tabs = [
@@ -26,8 +27,22 @@ export default function TasksWidget({ fullScreen }) {
     { id: 3, title: 'עתידיות', badge: { count: 2 } },
     { id: 4, title: 'פג תוקף', badge: { count: 1, semantic: 'danger' } },
   ]
-  const sortedTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
   const [activeTab, setActiveTab] = useState(tabs[0].title)
+  let finalTasks = []
+  switch (activeTab) {
+    case 'הכל':
+      finalTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
+      break
+    case 'היום':
+      finalTasks = tasks.filter(task => areDatesEqual(task.dateTime, new Date())).sort((a, b) => a.dateTime - b.dateTime)
+      break
+    case 'עתידיות':
+      finalTasks = tasks.filter(task => isFutureDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+      break
+    case 'פג תוקף':
+      finalTasks = tasks.filter(task => isPastDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+      break
+  }
   return (
     <Widget id='tasks'>
       <WidgetTitle>
@@ -54,7 +69,7 @@ export default function TasksWidget({ fullScreen }) {
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}
         </WidgetContentNavigation>
         <List>
-          {sortedTasks.map(task => {
+          {finalTasks.map(task => {
             return <TaskListItem key={task.id} task={task} />
           })}
         </List>

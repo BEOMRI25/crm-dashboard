@@ -12,15 +12,11 @@ export function getTypeSubclass(type) {
 }
 
 export function formatDate(dateTime) {
-  const today = new Date()
-  const yesterday = new Date()
-  yesterday.setDate(yesterday.getDate() - 1)
-  const tomorrow = new Date()
-  tomorrow.setDate(tomorrow.getDate() + 1)
-  const dayAfterTomorrow = new Date()
-  dayAfterTomorrow.setDate(dayAfterTomorrow.getDate() + 2)
-  const dayBeforeYesterday = new Date()
-  dayBeforeYesterday.setDate(dayBeforeYesterday.getDate() - 2)
+  const today = getDateWithOffset(0)
+  const yesterday = getDateWithOffset(-1)
+  const tomorrow = getDateWithOffset(1)
+  const dayAfterTomorrow = getDateWithOffset(2)
+  const dayBeforeYesterday = getDateWithOffset(-2)
   if (dateTime.getDate() === today.getDate() && dateTime.getMonth() === today.getMonth() && dateTime.getFullYear() === today.getFullYear()) {
     return 'היום'
   } else if (dateTime.getDate() === yesterday.getDate() && dateTime.getMonth() === yesterday.getMonth() && dateTime.getFullYear() === yesterday.getFullYear()) {
@@ -34,6 +30,16 @@ export function formatDate(dateTime) {
   } else {
     return dateTime.toLocaleDateString('he-IL', { month: 'long', day: 'numeric' })
   }
+}
+
+export function getDateWithOffset(offset, hours, minutes, seconds, milliseconds) {
+  const date = new Date()
+  if (hours !== undefined) date.setHours(hours)
+  if (minutes !== undefined) date.setMinutes(minutes)
+  if (seconds !== undefined) date.setSeconds(seconds)
+  if (milliseconds !== undefined) date.setMilliseconds(milliseconds)
+  date.setDate(date.getDate() + offset)
+  return date
 }
 
 export function formatTime(dateTime) {

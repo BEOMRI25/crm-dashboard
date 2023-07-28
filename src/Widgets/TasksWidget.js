@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Widget from '../Components/Widget'
 import WidgetTitle from '../Components/WidgetTitle'
 import './TasksWidget.css'
@@ -18,6 +17,7 @@ import { useState } from 'react'
 import ButtonLink from '../Components/ButtonLink'
 import List from '../Components/List'
 import TaskListItem from '../Components/ListItems/TaskListItem'
+import { tasks } from '../data'
 
 export default function TasksWidget({ fullScreen }) {
   const tabs = [
@@ -26,63 +26,7 @@ export default function TasksWidget({ fullScreen }) {
     { id: 3, title: 'עתידיות', badge: { count: 2 } },
     { id: 4, title: 'פג תוקף', badge: { count: 1, semantic: 'danger' } },
   ]
-  const tasks = [
-    {
-      id: 1,
-      type: 'שיחה',
-      description: 'להתקשר ללקוחות שהשאירו פרטים',
-      dateTime: new Date(2023, 6, 24),
-      displayTime: false,
-      assignedUser: 'אני',
-      customer: 'שירי מזור',
-      product: 'סימפלאן מערכת מלאה - מנוי חודשי',
-      comment: 'הערה חשובה מאוד',
-    },
-    {
-      id: 2,
-      type: 'כללי',
-      description: 'לכתוב תסריט לארבעה סרטונים חדשים',
-      dateTime: new Date(2023, 6, 27),
-      displayTime: false,
-      assignedUser: 'אוראל ספיר',
-      customer: null,
-      product: 'מוצרי עבר CEO',
-      comment: 'לשאול רשימת שאלות',
-    },
-    {
-      id: 3,
-      type: 'פיננסי',
-      description: 'להעביר את התשלום לצוות הפיתוח',
-      dateTime: new Date(2023, 6, 21, 8, 0),
-      displayTime: true,
-      assignedUser: 'אני',
-      customer: 'הדר כץ',
-      product: null,
-      comment: null,
-    },
-    {
-      id: 4,
-      type: 'פגישה',
-      description: 'לקבוע פגישה עם אוראל ספיר',
-      dateTime: new Date(2023, 6, 26, 20, 0),
-      displayTime: true,
-      assignedUser: 'אני',
-      customer: 'ירדן סמואלוב',
-      product: null,
-      comment: 'לא לשכוח לקחת מסמכים',
-    },
-    {
-      id: 5,
-      type: 'כללי',
-      description: 'לכתוב את הבריף לפגישה של יום חמישי',
-      dateTime: null,
-      displayTime: false,
-      assignedUser: 'עמרי ברגמן',
-      customer: null,
-      product: 'מוצרי עבר CEO',
-      comment: 'הערה חשובה מאוד',
-    },
-  ]
+  const sortedTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
   const [activeTab, setActiveTab] = useState(tabs[0].title)
   return (
     <Widget id='tasks'>
@@ -110,7 +54,7 @@ export default function TasksWidget({ fullScreen }) {
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}
         </WidgetContentNavigation>
         <List>
-          {tasks.map(task => {
+          {sortedTasks.map(task => {
             return <TaskListItem key={task.id} task={task} />
           })}
         </List>

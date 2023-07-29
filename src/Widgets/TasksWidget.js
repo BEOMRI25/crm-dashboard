@@ -18,29 +18,33 @@ import ButtonLink from '../Components/ButtonLink'
 import List from '../Components/List'
 import TaskListItem from '../Components/ListItems/TaskListItem'
 import { tasks } from '../data'
-import { areDatesEqual, compareDates, isFutureDate, isPastDate } from '../utilities'
+import { areDatesEqual, isFutureDate, isPastDate } from '../utilities'
 
 export default function TasksWidget({ fullScreen }) {
+  const [activeTab, setActiveTab] = useState('הכל')
+  const allTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
+  const todayTasks = tasks.filter(task => areDatesEqual(task.dateTime, new Date())).sort((a, b) => a.dateTime - b.dateTime)
+  const futureTasks = tasks.filter(task => isFutureDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+  const pastTasks = tasks.filter(task => isPastDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
   const tabs = [
-    { id: 1, title: 'הכל', badge: { count: 7 } },
-    { id: 2, title: 'היום', badge: { count: 3, semantic: 'success' } },
-    { id: 3, title: 'עתידיות', badge: { count: 2 } },
-    { id: 4, title: 'פג תוקף', badge: { count: 1, semantic: 'danger' } },
+    { id: 1, title: 'הכל', badge: { count: allTasks.length } },
+    { id: 2, title: 'היום', badge: { count: todayTasks.length, semantic: 'success' } },
+    { id: 3, title: 'עתידיות', badge: { count: futureTasks.length } },
+    { id: 4, title: 'פג תוקף', badge: { count: pastTasks.length, semantic: 'danger' } },
   ]
-  const [activeTab, setActiveTab] = useState(tabs[0].title)
-  let finalTasks = []
+  let tasksToDisplay = []
   switch (activeTab) {
     case 'הכל':
-      finalTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
+      tasksToDisplay = allTasks
       break
     case 'היום':
-      finalTasks = tasks.filter(task => areDatesEqual(task.dateTime, new Date())).sort((a, b) => a.dateTime - b.dateTime)
+      tasksToDisplay = todayTasks
       break
     case 'עתידיות':
-      finalTasks = tasks.filter(task => isFutureDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+      tasksToDisplay = futureTasks
       break
     case 'פג תוקף':
-      finalTasks = tasks.filter(task => isPastDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+      tasksToDisplay = pastTasks
       break
   }
   return (
@@ -69,7 +73,7 @@ export default function TasksWidget({ fullScreen }) {
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}
         </WidgetContentNavigation>
         <List>
-          {finalTasks.map(task => {
+          {tasksToDisplay.map(task => {
             return <TaskListItem key={task.id} task={task} />
           })}
         </List>

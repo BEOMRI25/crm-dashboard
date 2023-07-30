@@ -61,6 +61,13 @@ export default function TasksWidget({ fullScreen }) {
       tasksToDisplay = pastTasks
       break
   }
+  function quickTaskCreation(e) {
+    e.currentTarget.disabled = true
+  }
+  function taskCreation() {
+    console.log('task creation')
+  }
+  const handleAddTaskButton = fullScreen ? taskCreation : quickTaskCreation
   return (
     <Widget id='tasks'>
       <WidgetTitle>
@@ -73,7 +80,7 @@ export default function TasksWidget({ fullScreen }) {
         <WidgetTitleActions>
           {fullScreen && <SearchField />}
           {fullScreen && <Button level='secondary' icon='excel' />}
-          <Button level='primary' icon='plus' />
+          <Button level='primary' icon='plus' onClick={handleAddTaskButton} />
         </WidgetTitleActions>
         {!fullScreen && <WidgetTitleIcon icon={clipBoardIcon} />}
       </WidgetTitle>

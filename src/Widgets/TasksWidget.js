@@ -13,11 +13,11 @@ import WidgetContent from '../Components/WidgetContent'
 import WidgetContentNavigation from '../Components/WidgetContentNavigation'
 import Tabs from '../Components/Tabs'
 import Tab from '../Components/Tab'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import ButtonLink from '../Components/ButtonLink'
 import List from '../Components/List'
 import TaskListItem from '../Components/ListItems/TaskListItem'
-import { tasks } from '../data'
+import { tasks as tasksData } from '../data'
 import { areDatesEqual, isFutureDate, isPastDate } from '../utilities'
 
 export default function TasksWidget({ fullScreen }) {
@@ -27,10 +27,19 @@ export default function TasksWidget({ fullScreen }) {
     if (activeTabFromStorage) initialValue = activeTabFromStorage
     return initialValue
   })
-  const allTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
-  const todayTasks = tasks.filter(task => areDatesEqual(task.dateTime, new Date())).sort((a, b) => a.dateTime - b.dateTime)
-  const futureTasks = tasks.filter(task => isFutureDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
-  const pastTasks = tasks.filter(task => isPastDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+  const [tasks, setTasks] = useState(tasksData)
+  const allTasks = useMemo(() => {
+    return [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
+  }, [tasks])
+  const todayTasks = useMemo(() => {
+    return tasks.filter(task => areDatesEqual(task.dateTime, new Date())).sort((a, b) => a.dateTime - b.dateTime)
+  }, [tasks])
+  const futureTasks = useMemo(() => {
+    return tasks.filter(task => isFutureDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+  }, [tasks])
+  const pastTasks = useMemo(() => {
+    return tasks.filter(task => isPastDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
+  }, [tasks])
   const tabs = [
     { id: 1, title: 'הכל', badge: { count: allTasks.length } },
     { id: 2, title: 'היום', badge: { count: todayTasks.length, semantic: 'success' } },

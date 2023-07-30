@@ -21,7 +21,12 @@ import { tasks } from '../data'
 import { areDatesEqual, isFutureDate, isPastDate } from '../utilities'
 
 export default function TasksWidget({ fullScreen }) {
-  const [activeTab, setActiveTab] = useState('הכל')
+  const [activeTab, setActiveTab] = useState(() => {
+    let initialValue = 'הכל'
+    const activeTabFromStorage = sessionStorage.getItem('tasksActiveTab')
+    if (activeTabFromStorage) initialValue = activeTabFromStorage
+    return initialValue
+  })
   const allTasks = [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
   const todayTasks = tasks.filter(task => areDatesEqual(task.dateTime, new Date())).sort((a, b) => a.dateTime - b.dateTime)
   const futureTasks = tasks.filter(task => isFutureDate(task.dateTime)).sort((a, b) => a.dateTime - b.dateTime)
@@ -67,7 +72,18 @@ export default function TasksWidget({ fullScreen }) {
         <WidgetContentNavigation>
           <Tabs>
             {tabs.map(tab => {
-              return <Tab key={tab.id} title={tab.title} badge={tab.badge} active={tab.title === activeTab} onClick={() => setActiveTab(tab.title)} />
+              return (
+                <Tab
+                  key={tab.id}
+                  title={tab.title}
+                  badge={tab.badge}
+                  active={tab.title === activeTab}
+                  onClick={() => {
+                    setActiveTab(tab.title)
+                    sessionStorage.setItem('tasksActiveTab', tab.title)
+                  }}
+                />
+              )
             })}
           </Tabs>
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}

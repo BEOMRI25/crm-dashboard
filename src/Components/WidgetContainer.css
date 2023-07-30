@@ -14,6 +14,4 @@
   height: calc(100% + var(--medium));
   grid-template-columns: initial;
   grid-template-rows: initial;
-  padding: 0;
-  background-color: transparent;
 }

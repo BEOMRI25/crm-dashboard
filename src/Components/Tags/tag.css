@@ -1,4 +1,4 @@
-.user-tag {
+.tag {
   background-color: var(--primary-double-positive-layer);
   border-radius: var(--x-small);
   height: calc(28 * var(--vw-basis));

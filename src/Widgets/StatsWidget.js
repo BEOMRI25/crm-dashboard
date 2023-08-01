@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Widget from '../Components/Widget'
-import WidgetContent from '../Components/WidgetContent'
-import WidgetContentNavigation from '../Components/WidgetContentNavigation'
+import WidgetContent from '../Components/WidgetContent/WidgetContent'
+import WidgetContentNavigation from '../Components/WidgetContent/WidgetContentNavigation'
 import Tabs from '../Components/Tabs'
 import Tab from '../Components/Tab'
 

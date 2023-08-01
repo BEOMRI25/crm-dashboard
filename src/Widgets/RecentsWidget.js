@@ -1,5 +1,5 @@
 import Widget from '../Components/Widget'
-import WidgetContent from '../Components/WidgetContent'
+import WidgetContent from '../Components/WidgetContent/WidgetContent'
 
 export default function RecentsWidget() {
   return (

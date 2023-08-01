@@ -16,7 +16,7 @@
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.widget#tasks-full-screen .list-item > .type-tag {
+.widget#tasks-full-screen .list-item > .tag.type {
   order: -1;
 }
 
@@ -25,8 +25,10 @@
   grid-template-columns: auto 4fr auto 1fr auto 1fr auto 1fr auto 1.5fr auto 3fr;
 }
 
-.widget#tasks-full-screen .list-item > .time-tag,
-.widget#tasks-full-screen .list-item > .user-tag {
+.widget#tasks-full-screen .list-item > .tag.time,
+.widget#tasks-full-screen .list-item > .tag.user,
+.widget#tasks-full-screen .list-item > .tag.customer,
+.widget#tasks-full-screen .list-item > .tag.product {
   align-self: center;
   justify-self: start;
 }

@@ -12,6 +12,10 @@
   color: var(--semantic-danger);
 }
 
+.list-item.danger .divider {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .widget#tasks-full-screen .list-item > .type-tag {
   order: -1;
 }

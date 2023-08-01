@@ -11,3 +11,7 @@
   background-color: var(--neutral-light);
   color: var(--semantic-danger);
 }
+
+.widget#tasks:only-child .list-item > .type-tag {
+  order: -1;
+}

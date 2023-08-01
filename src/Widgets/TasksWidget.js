@@ -106,7 +106,7 @@ export default function TasksWidget({ fullScreen }) {
         </WidgetContentNavigation>
         <List>
           {tasksToDisplay.map(task => {
-            return <TaskListItem key={task.id} task={task} />
+            return <TaskListItem key={task.id} task={task} fullScreen={fullScreen} />
           })}
         </List>
       </WidgetContent>

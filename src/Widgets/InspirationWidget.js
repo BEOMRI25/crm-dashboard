@@ -1,3 +1,4 @@
+import Divider from '../Components/Divider'
 import Widget from '../Components/Widget'
 import WidgetContent from '../Components/WidgetContent'
 import WidgetTitle from '../Components/WidgetTitle'
@@ -12,7 +13,9 @@ export default function InspirationWidget() {
         <WidgetTitleHeading heading='השראה יומית' />
         <WidgetTitleIcon icon={megaphoneIcon} />
       </WidgetTitle>
-      <WidgetContent />
+      <WidgetContent>
+        <Divider />
+      </WidgetContent>
     </Widget>
   )
 }

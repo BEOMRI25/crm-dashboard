@@ -1,0 +1,8 @@
+.divider {
+  --thickness: calc(1.5 * var(--vw-basis));
+  background-color: var(--primary-quadruple-positive-layer);
+  align-self: stretch;
+  min-height: var(--thickness);
+  min-width: var(--thickness);
+  border-radius: calc(var(--thickness) / 2);
+}

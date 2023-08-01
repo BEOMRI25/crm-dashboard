@@ -1,4 +1,4 @@
-.widget#tasks:not(:only-child) {
+.widget#tasks {
   grid-row: 2 / 4;
   margin-bottom: calc(var(--medium) * -2);
 }

@@ -19,6 +19,7 @@ export default function TaskListItem({ task, fullScreen }) {
       <span className='description'>{task.description}</span>
       {fullScreen && <Divider />}
       {task.dateTime && <TimeTag dateTime={task.dateTime} displayTime={task.displayTime} />}
+      {fullScreen && <Divider />}
       <TypeTag type={task.type} />
     </ListItem>
   )

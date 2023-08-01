@@ -69,7 +69,7 @@ export default function TasksWidget({ fullScreen }) {
   }
   const handleAddTaskButton = fullScreen ? taskCreation : quickTaskCreation
   return (
-    <Widget id='tasks'>
+    <Widget id={`tasks${fullScreen ? '-full-screen' : ''}`}>
       <WidgetTitle>
         {fullScreen && (
           <WidgetTitleNavigation>

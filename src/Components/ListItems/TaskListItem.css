@@ -2,12 +2,12 @@
   background-color: var(--semantic-danger);
 }
 
-.list-item.danger .type-tag {
+.list-item.danger .tag.type {
   --type-color: var(--neutral-light);
   --type-color-20: var(--neutral-light-20);
 }
 
-.list-item.danger .time-tag {
+.list-item.danger .tag.time {
   background-color: var(--neutral-light);
   color: var(--semantic-danger);
 }
@@ -22,7 +22,7 @@
 
 .widget#tasks-full-screen .list-item {
   display: grid;
-  grid-template-columns: auto 4fr auto 1fr auto 1fr auto 1fr auto 1.5fr auto 3fr;
+  grid-template-columns: auto 4fr auto 1fr auto 1fr auto 1fr auto 1fr auto 3fr;
 }
 
 .widget#tasks-full-screen .list-item > .tag.time,

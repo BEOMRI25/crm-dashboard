@@ -5,6 +5,7 @@ import TypeTag from '../TypeTag'
 import './TaskListItem.css'
 import { isPastDate } from '../../utilities'
 import Divider from '../Divider'
+import UserTag from '../UserTag'
 
 export default function TaskListItem({ task, fullScreen }) {
   const isExpired = isPastDate(task.dateTime)
@@ -19,7 +20,13 @@ export default function TaskListItem({ task, fullScreen }) {
       <span className='description'>{task.description}</span>
       {fullScreen && <Divider />}
       {task.dateTime ? <TimeTag dateTime={task.dateTime} displayTime={task.displayTime} /> : <div></div>}
-      {fullScreen && <Divider />}
+      {fullScreen && (
+        <>
+          <Divider />
+          <UserTag user={task.assignedUser} />
+          <Divider />
+        </>
+      )}
       <TypeTag type={task.type} />
     </ListItem>
   )

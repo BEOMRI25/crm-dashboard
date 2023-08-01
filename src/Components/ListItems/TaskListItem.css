@@ -25,7 +25,8 @@
   grid-template-columns: auto 4fr auto 1fr auto 1fr auto 1fr auto 1.5fr auto 3fr;
 }
 
-.widget#tasks-full-screen .list-item > .time-tag {
+.widget#tasks-full-screen .list-item > .time-tag,
+.widget#tasks-full-screen .list-item > .user-tag {
   align-self: center;
   justify-self: start;
 }

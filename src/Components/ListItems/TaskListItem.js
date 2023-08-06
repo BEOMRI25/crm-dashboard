@@ -27,9 +27,9 @@ export default function TaskListItem({ task, fullScreen }) {
           <Divider />
           <UserTag user={task.assignedUser} />
           <Divider />
-          {task.customer ? <CustomerTag customer={task.customer} /> : <div></div>}
+          {task.customerId ? <CustomerTag customerId={task.customerId} /> : <div></div>}
           <Divider />
-          {task.product ? <ProductTag product={task.product} /> : <div></div>}
+          {task.productId ? <ProductTag productId={task.productId} /> : <div></div>}
           <Divider />
           <span className='comment'>{task.comment}</span>
         </>

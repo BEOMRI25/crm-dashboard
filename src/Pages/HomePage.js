@@ -6,7 +6,7 @@ import RecentsWidget from '../Widgets/RecentsWidget'
 import StatsWidget from '../Widgets/StatsWidget'
 import TasksWidget from '../Widgets/TasksWidget'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <StatsWidget />

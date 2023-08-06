@@ -8,8 +8,8 @@ export const tasks = [
     dateTime: getDateWithOffset(-1),
     displayTime: false,
     assignedUser: 'אני',
-    customer: 'שירי מזור',
-    product: 'סימפלאן מערכת מלאה - מנוי חודשי',
+    customerId: 1,
+    productId: 1,
     comment: 'הערה חשובה מאוד',
   },
   {
@@ -19,8 +19,8 @@ export const tasks = [
     dateTime: getDateWithOffset(0, 23, 59, 59, 999),
     displayTime: false,
     assignedUser: 'אוראל ספיר',
-    customer: null,
-    product: 'מוצרי עבר CEO',
+    customerId: null,
+    productId: 2,
     comment: 'לשאול רשימת שאלות',
   },
   {
@@ -30,8 +30,8 @@ export const tasks = [
     dateTime: getDateWithOffset(0, 8, 0),
     displayTime: true,
     assignedUser: 'אני',
-    customer: 'הדר כץ',
-    product: null,
+    customerId: 2,
+    productId: null,
     comment: null,
   },
   {
@@ -41,8 +41,8 @@ export const tasks = [
     dateTime: getDateWithOffset(0, 20, 0),
     displayTime: true,
     assignedUser: 'אני',
-    customer: 'ירדן סמואלוב',
-    product: null,
+    customerId: 3,
+    productId: null,
     comment: 'לא לשכוח לקחת מסמכים',
   },
   {
@@ -52,8 +52,8 @@ export const tasks = [
     dateTime: null,
     displayTime: false,
     assignedUser: 'עמרי ברגמן',
-    customer: null,
-    product: 'מוצרי עבר CEO',
+    customerId: null,
+    productId: 2,
     comment: 'הערה חשובה מאוד',
   },
   {
@@ -63,8 +63,8 @@ export const tasks = [
     dateTime: getDateWithOffset(1, 16, 0),
     displayTime: true,
     assignedUser: 'אביב כהן',
-    customer: 'יהודית וייס',
-    product: 'סימפלאן מערכת מלאה - מנוי חודשי',
+    customerId: 4,
+    productId: 1,
     comment: null,
   },
   {
@@ -74,8 +74,8 @@ export const tasks = [
     dateTime: getDateWithOffset(2, 8, 0),
     displayTime: true,
     assignedUser: 'אני',
-    customer: null,
-    product: null,
+    customerId: null,
+    productId: null,
     comment: 'הערה חשובה מאוד',
   },
   {
@@ -85,8 +85,38 @@ export const tasks = [
     dateTime: getDateWithOffset(7, 10, 0),
     displayTime: true,
     assignedUser: 'אני',
-    customer: null,
-    product: null,
+    customerId: null,
+    productId: null,
     comment: 'הערה חשובה מאוד',
+  },
+]
+
+export const customers = [
+  {
+    id: 1,
+    name: 'שירי מזור',
+  },
+  {
+    id: 2,
+    name: 'הדר כץ',
+  },
+  {
+    id: 3,
+    name: 'ירדן סמואלוב',
+  },
+  {
+    id: 4,
+    name: 'יהודית וייס',
+  },
+]
+
+export const products = [
+  {
+    id: 1,
+    name: 'סימפלאן מערכת מלאה - מנוי חודשי',
+  },
+  {
+    id: 2,
+    name: 'מוצרי עבר CEO',
   },
 ]

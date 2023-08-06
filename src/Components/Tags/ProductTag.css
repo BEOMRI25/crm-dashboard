@@ -1,2 +1,3 @@
-.tag.product {
+.tag.product:hover {
+  background-color: var(--primary-quadruple-positive-layer);
 }

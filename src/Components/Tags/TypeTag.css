@@ -4,4 +4,5 @@
   border: 1px solid var(--type-color);
   width: calc(60 * var(--vw-basis));
   background-color: var(--type-color-20);
+  justify-content: center;
 }

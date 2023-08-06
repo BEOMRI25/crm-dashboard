@@ -9,5 +9,9 @@ export default function TimeTag({ dateTime, displayTime }) {
     const time = formatTime(dateTime)
     tagText += `, ${time}`
   }
-  return <div className='tag time'>{tagText}</div>
+  return (
+    <div className='tag time'>
+      <span>{tagText}</span>
+    </div>
+  )
 }

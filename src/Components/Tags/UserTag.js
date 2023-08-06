@@ -4,8 +4,8 @@ import './UserTag.css'
 
 export default function UserTag({ user }) {
   return (
-    <Link className='tag user'>
+    <div className='tag user' title={user}>
       <span>{user}</span>
-    </Link>
+    </div>
   )
 }

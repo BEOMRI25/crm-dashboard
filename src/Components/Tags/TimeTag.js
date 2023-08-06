@@ -10,7 +10,7 @@ export default function TimeTag({ dateTime, displayTime }) {
     tagText += `, ${time}`
   }
   return (
-    <div className='tag time'>
+    <div className='tag time' title={tagText}>
       <span>{tagText}</span>
     </div>
   )

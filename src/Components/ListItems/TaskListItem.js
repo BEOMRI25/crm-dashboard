@@ -19,7 +19,9 @@ export default function TaskListItem({ task, fullScreen }) {
   })
   return (
     <ListItem ref={listItem}>
-      <span className='description'>{task.description}</span>
+      <span className='description' title={task.description}>
+        {task.description}
+      </span>
       {fullScreen && <Divider />}
       {task.dateTime ? <TimeTag dateTime={task.dateTime} displayTime={task.displayTime} /> : <div></div>}
       {fullScreen && (
@@ -31,7 +33,9 @@ export default function TaskListItem({ task, fullScreen }) {
           <Divider />
           {task.productId ? <ProductTag productId={task.productId} /> : <div></div>}
           <Divider />
-          <span className='comment'>{task.comment}</span>
+          <span className='comment' title={task.comment}>
+            {task.comment}
+          </span>
         </>
       )}
       <TypeTag type={task.type} />

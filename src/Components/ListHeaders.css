@@ -1,0 +1,5 @@
+.list-headers {
+  display: grid;
+  padding-inline: var(--list-item-inline-padding);
+  gap: calc(2 * var(--list-item-gap) + var(--divider-thickness));
+}

@@ -1,0 +1,27 @@
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: var(--x-small);
+}
+
+.list-header > span {
+  font-size: var(--text-small);
+  color: var(--primary-top);
+}
+
+.list-header > svg {
+  width: calc(10 * var(--vw-basis));
+}
+
+.list-header path {
+  color: var(--primary-top);
+}
+
+.list-header.sortable:hover > span,
+.list-header.sortable:hover path {
+  color: white;
+}
+
+.list-header.sortable {
+  cursor: pointer;
+}

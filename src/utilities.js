@@ -1,3 +1,5 @@
+import { customers, products } from './data'
+
 export function getTypeSubclass(type) {
   switch (type) {
     case 'כללי':
@@ -59,4 +61,12 @@ export function formatDate(dateTime) {
 
 export function formatTime(dateTime) {
   return dateTime.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })
+}
+
+export function getCustomer(id) {
+  return customers.find(customer => customer.id == id)
+}
+
+export function getProduct(id) {
+  return products.find(product => product.id == id)
 }

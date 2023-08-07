@@ -7,7 +7,7 @@
   justify-content: center;
   gap: var(--small);
   padding-block: var(--small);
-  font-size: calc(14 * var(--vw-basis));
+  font-size: var(--text-small);
   cursor: pointer;
   user-select: none;
 }

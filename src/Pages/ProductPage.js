@@ -1,8 +1,8 @@
-import { products } from '../data'
+import { getProduct } from '../utilities'
 
 export default function ProductPage() {
   const searchParams = new URLSearchParams(window.location.search)
   const productId = searchParams.get('id')
-  const product = products.find(product => product.id == productId)
+  const product = getProduct(productId)
   return <>{product.name}</>
 }

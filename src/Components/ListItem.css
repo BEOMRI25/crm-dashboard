@@ -1,13 +1,12 @@
 .list-item {
   display: flex;
   align-items: center;
-  gap: var(--small);
+  gap: var(--list-item-gap);
   border-radius: var(--x-small);
-  padding: calc(12 * var(--vw-basis)) calc(10 * var(--vw-basis));
-  padding-inline-start: calc(20 * var(--vw-basis));
+  padding: calc(12 * var(--vw-basis)) var(--list-item-inline-padding);
   background-color: var(--primary-positive-layer);
   height: var(--row-height);
-  font-size: calc(18 * var(--vw-basis));
+  font-size: var(--text-large);
 }
 
 .list-item > .description {

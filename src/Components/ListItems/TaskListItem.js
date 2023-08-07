@@ -19,6 +19,7 @@ export default function TaskListItem({ task, fullScreen }) {
   })
   return (
     <ListItem ref={listItem}>
+      {fullScreen && <Divider />}
       <span className='description' title={task.description}>
         {task.description}
       </span>

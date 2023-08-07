@@ -36,8 +36,20 @@
   --x-small: calc(4 * var(--vw-basis));
   --small: calc(8 * var(--vw-basis));
   --medium: calc(24 * var(--vw-basis));
-  --input-height: calc(36 * var(--vw-basis));
+
+  /* Utilities */
   --row-height: calc(48 * var(--vw-basis));
+  --input-height: calc(36 * var(--vw-basis));
+  --list-item-inline-padding: calc(10 * var(--vw-basis));
+  --list-item-gap: var(--small);
+  --divider-thickness: calc(1.5 * var(--vw-basis));
+  --type-tag-width: calc(60 * var(--vw-basis));
+
+  /* Typography */
+  --text-x-small: calc(12 * var(--vw-basis));
+  --text-small: calc(14 * var(--vw-basis));
+  --text-medium: calc(16 * var(--vw-basis));
+  --text-large: calc(18 * var(--vw-basis));
 }
 
 *,

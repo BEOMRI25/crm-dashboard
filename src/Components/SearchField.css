@@ -4,7 +4,7 @@ input[type='search'] {
   height: var(--input-height);
   padding-inline: var(--small) var(--input-height);
   background-color: var(--primary-negative-layer);
-  font-size: calc(16 * var(--vw-basis));
+  font-size: var(--text-medium);
   width: calc(150 * var(--vw-basis));
   transition: width 0.2s ease;
 }

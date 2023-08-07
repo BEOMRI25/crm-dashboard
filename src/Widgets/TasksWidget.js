@@ -19,6 +19,7 @@ import List from '../Components/List'
 import TaskListItem from '../Components/ListItems/TaskListItem'
 import { tasks as tasksData } from '../data'
 import { areDatesEqual, isFutureDate, isPastDate } from '../utilities'
+import TaskListHeaders from '../Components/ListHeaders/TaskListHeaders'
 
 export default function TasksWidget({ fullScreen }) {
   const [activeTab, setActiveTab] = useState(() => {
@@ -27,6 +28,7 @@ export default function TasksWidget({ fullScreen }) {
     if (activeTabFromStorage) initialValue = activeTabFromStorage
     return initialValue
   })
+  const [sortedBy, setSortedBy] = useState('type')
   const [tasks, setTasks] = useState(tasksData)
   const allTasks = useMemo(() => {
     return [...tasks.filter(task => task.dateTime !== null && task.dateTime < new Date()).sort((a, b) => a.dateTime - b.dateTime), ...tasks.filter(task => task.dateTime === null), ...tasks.filter(task => task.dateTime !== null && task.dateTime > new Date()).sort((a, b) => a.dateTime - b.dateTime)]
@@ -46,21 +48,27 @@ export default function TasksWidget({ fullScreen }) {
     { id: 3, title: 'עתידיות', badge: { count: futureTasks.length } },
     { id: 4, title: 'פג תוקף', badge: { count: pastTasks.length, semantic: 'danger' } },
   ]
-  let tasksToDisplay = []
-  switch (activeTab) {
-    case 'הכל':
-      tasksToDisplay = allTasks
-      break
-    case 'היום':
-      tasksToDisplay = todayTasks
-      break
-    case 'עתידיות':
-      tasksToDisplay = futureTasks
-      break
-    case 'פג תוקף':
-      tasksToDisplay = pastTasks
-      break
-  }
+  const tasksToDisplay = useMemo(() => {
+    let returnValue = []
+    switch (activeTab) {
+      case 'הכל':
+        returnValue = allTasks
+        break
+      case 'היום':
+        returnValue = todayTasks
+        break
+      case 'עתידיות':
+        returnValue = futureTasks
+        break
+      case 'פג תוקף':
+        returnValue = pastTasks
+        break
+    }
+    if (sortedBy) {
+      returnValue.sort((a, b) => a[sortedBy].localeCompare(b[sortedBy]))
+    }
+    return returnValue
+  }, [tasks, sortedBy, activeTab])
   function quickTaskCreation(e) {
     e.currentTarget.disabled = true
   }
@@ -104,6 +112,7 @@ export default function TasksWidget({ fullScreen }) {
           </Tabs>
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}
         </WidgetContentNavigation>
+        {fullScreen && <TaskListHeaders />}
         <List>
           {tasksToDisplay.map(task => {
             return <TaskListItem key={task.id} task={task} fullScreen={fullScreen} />

@@ -70,3 +70,38 @@ export function getCustomer(id) {
 export function getProduct(id) {
   return products.find(product => product.id == id)
 }
+
+export function sortBy(sortedBy, ascending) {
+  return function (a, b) {
+    let compareItemA = a[sortedBy]
+    let compareItemB = b[sortedBy]
+    if (sortedBy.toLowerCase().includes('id')) {
+      const objectType = sortedBy.replace('Id', '')
+      const objectA = getObject(objectType, a[sortedBy])
+      const objectB = getObject(objectType, b[sortedBy])
+      compareItemA = objectA ? objectA.name : null
+      compareItemB = objectB ? objectB.name : null
+    }
+    if (compareItemA === compareItemB) {
+      return 0
+    }
+    if (compareItemA === null) {
+      return 1
+    }
+    if (compareItemB === null) {
+      return -1
+    }
+    if (ascending) {
+      return compareItemA < compareItemB ? -1 : 1
+    }
+    return compareItemA < compareItemB ? 1 : -1
+  }
+}
+
+export function getObject(objectType, id) {
+  return eval(`get${capitalize(objectType)}(${id})`)
+}
+
+export function capitalize(string) {
+  return string[0].toUpperCase() + string.slice(1)
+}

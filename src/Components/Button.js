@@ -1,9 +1,9 @@
 import ButtonIcon from '../button-icons/ButtonIcon'
 import './Button.css'
 
-export default function Button({ level, icon, onClick }) {
+export default function Button({ level, icon }) {
   return (
-    <button className={`button ${level}`} onClick={onClick}>
+    <button className={`button ${level}`}>
       <ButtonIcon iconName={icon} />
     </button>
   )

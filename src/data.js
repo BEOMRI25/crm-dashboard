@@ -120,3 +120,66 @@ export const products = [
     name: 'מוצרי עבר CEO',
   },
 ]
+
+export const leads = [
+  {
+    id: 1,
+    name: 'פזית בן שמואל',
+    dateTime: getDateWithOffset(1, 8, 0),
+    displayTime: true,
+  },
+  {
+    id: 2,
+    name: 'הדר כץ',
+    dateTime: getDateWithOffset(5, 14, 0),
+    displayTime: true,
+  },
+  {
+    id: 3,
+    name: 'ירדן סמואלוב',
+    dateTime: getDateWithOffset(2, 12, 0),
+    displayTime: true,
+  },
+  {
+    id: 4,
+    name: 'ליאת בת אבן',
+    dateTime: getDateWithOffset(7, 17, 0),
+    displayTime: true,
+  },
+  {
+    id: 5,
+    name: 'רועי פינקלשטיין',
+    dateTime: getDateWithOffset(3, 8, 0),
+    displayTime: true,
+  },
+  {
+    id: 6,
+    name: 'נועה אלוש',
+    dateTime: getDateWithOffset(10, 10, 30),
+    displayTime: true,
+  },
+  {
+    id: 7,
+    name: 'יהודית וייס',
+    dateTime: getDateWithOffset(1, 10, 0),
+    displayTime: true,
+  },
+  {
+    id: 8,
+    name: 'מיכאל ניסני',
+    dateTime: getDateWithOffset(12, 8, 0),
+    displayTime: true,
+  },
+  {
+    id: 9,
+    name: 'יורם עקרי',
+    dateTime: getDateWithOffset(2, 10, 0),
+    displayTime: true,
+  },
+  {
+    id: 10,
+    name: 'מיכאל ניסני',
+    dateTime: getDateWithOffset(8, 8, 0),
+    displayTime: true,
+  },
+]

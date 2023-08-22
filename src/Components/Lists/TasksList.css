@@ -1,0 +1,4 @@
+.list.tasks-list {
+  display: flex;
+  flex-direction: column;
+}

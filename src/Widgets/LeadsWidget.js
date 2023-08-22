@@ -5,6 +5,8 @@ import WidgetTitleIcon from '../Components/WidgetTitle/WidgetTitleIcon'
 import './LeadsWidget.css'
 import moneySackIcon from '../img/money-sack-icon.png'
 import WidgetContent from '../Components/WidgetContent/WidgetContent'
+import { leads } from '../data'
+import LeadsList from '../Components/Lists/LeadsList'
 
 export default function LeadsWidget() {
   return (
@@ -13,7 +15,9 @@ export default function LeadsWidget() {
         <WidgetTitleHeading heading='לידים לטיפול' />
         <WidgetTitleIcon icon={moneySackIcon} />
       </WidgetTitle>
-      <WidgetContent />
+      <WidgetContent>
+        <LeadsList leads={leads} />
+      </WidgetContent>
     </Widget>
   )
 }

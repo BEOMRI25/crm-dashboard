@@ -4,13 +4,12 @@ import WidgetContent from '../Components/WidgetContent/WidgetContent'
 import WidgetContentNavigation from '../Components/WidgetContent/WidgetContentNavigation'
 import { useMemo, useState } from 'react'
 import ButtonLink from '../Components/ButtonLink'
-import List from '../Components/List'
-import TaskListItem from '../Components/ListItems/TaskListItem'
 import { tasks as tasksData } from '../data'
 import { areDatesEqual, isFutureDate, isPastDate, sortBy } from '../utilities'
 import TaskListHeaders from '../Components/ListHeaders/TaskListHeaders'
 import TasksTabs from '../Components/TasksTabs'
 import TasksWidgetTitle from '../Components/WidgetTitle/WidgetTitles/TasksWidgetTitle'
+import TasksList from '../Components/Lists/TasksList'
 
 export default function TasksWidget({ fullScreen }) {
   const [activeTab, setActiveTab] = useState(() => {
@@ -69,11 +68,7 @@ export default function TasksWidget({ fullScreen }) {
           {!fullScreen && <ButtonLink level='secondary' icon='expand' to='/tasks' />}
         </WidgetContentNavigation>
         {fullScreen && <TaskListHeaders setSortedBy={setSortedBy} />}
-        <List>
-          {tasksToDisplay.map(task => {
-            return <TaskListItem key={task.id} task={task} fullScreen={fullScreen} />
-          })}
-        </List>
+        <TasksList tasksToDisplay={tasksToDisplay} fullScreen={fullScreen} />
       </WidgetContent>
     </Widget>
   )

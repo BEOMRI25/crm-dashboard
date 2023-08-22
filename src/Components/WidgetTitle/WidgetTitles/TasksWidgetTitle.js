@@ -10,7 +10,7 @@ import clipBoardIcon from '../../../img/clipboard-icon.png'
 
 export default function TasksWidgetTitle({ fullScreen }) {
   return (
-    <WidgetTitle>
+    <WidgetTitle className='tasks-widget-title'>
       {fullScreen && (
         <WidgetTitleNavigation>
           <BackButton />

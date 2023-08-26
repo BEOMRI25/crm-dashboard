@@ -7,6 +7,8 @@
   background-color: var(--primary-positive-layer);
   height: var(--row-height);
   font-size: var(--text-large);
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
 .list-item .description {

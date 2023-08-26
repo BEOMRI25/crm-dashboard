@@ -120,6 +120,10 @@ export const customers = [
     id: 7,
     name: 'רועי פינקלשטיין',
   },
+  {
+    id: 8,
+    name: 'נועה אלוש',
+  },
 ]
 
 export const products = [
@@ -178,5 +182,74 @@ export const leads = [
     id: 9,
     customerId: 7,
     source: 'whatsapp',
+  },
+]
+
+export const trackedCustomers = [
+  {
+    id: 1,
+    customerId: 8,
+    dateTime: getDateWithOffset(10, 18, 0),
+  },
+  {
+    id: 2,
+    customerId: 2,
+    dateTime: getDateWithOffset(7, 9, 30),
+  },
+  {
+    id: 3,
+    customerId: 3,
+    dateTime: getDateWithOffset(2, 16, 30),
+  },
+  {
+    id: 4,
+    customerId: 6,
+    dateTime: getDateWithOffset(1, 9, 0),
+  },
+  {
+    id: 5,
+    customerId: 1,
+    dateTime: getDateWithOffset(5, 13, 30),
+  },
+  {
+    id: 6,
+    customerId: 5,
+    dateTime: getDateWithOffset(4, 15, 0),
+  },
+  {
+    id: 7,
+    customerId: 1,
+    dateTime: getDateWithOffset(2, 12, 30),
+  },
+]
+
+export const recentViews = [
+  {
+    id: 1,
+    customerId: 8,
+  },
+  {
+    id: 2,
+    customerId: 2,
+  },
+  {
+    id: 3,
+    customerId: 3,
+  },
+  {
+    id: 4,
+    customerId: 6,
+  },
+  {
+    id: 5,
+    customerId: 7,
+  },
+  {
+    id: 6,
+    customerId: 4,
+  },
+  {
+    id: 7,
+    customerId: 5,
   },
 ]

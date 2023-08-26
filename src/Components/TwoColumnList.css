@@ -1,4 +1,4 @@
-.list.leads-list {
+.list.two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }

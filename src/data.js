@@ -108,6 +108,18 @@ export const customers = [
     id: 4,
     name: 'יהודית וייס',
   },
+  {
+    id: 5,
+    name: 'פזית בן שמואל',
+  },
+  {
+    id: 6,
+    name: 'ליאת בת אבן',
+  },
+  {
+    id: 7,
+    name: 'רועי פינקלשטיין',
+  },
 ]
 
 export const products = [
@@ -124,62 +136,47 @@ export const products = [
 export const leads = [
   {
     id: 1,
-    name: 'פזית בן שמואל',
-    dateTime: getDateWithOffset(1, 8, 0),
-    displayTime: true,
+    customerId: 5,
+    source: 'instagram',
   },
   {
     id: 2,
-    name: 'הדר כץ',
-    dateTime: getDateWithOffset(5, 14, 0),
-    displayTime: true,
+    customerId: 2,
+    source: 'whatsapp',
   },
   {
     id: 3,
-    name: 'ירדן סמואלוב',
-    dateTime: getDateWithOffset(2, 12, 0),
-    displayTime: true,
+    customerId: 3,
+    source: 'website',
   },
   {
     id: 4,
-    name: 'ליאת בת אבן',
-    dateTime: getDateWithOffset(7, 17, 0),
-    displayTime: true,
+    customerId: 6,
+    source: 'facebook',
   },
   {
     id: 5,
-    name: 'רועי פינקלשטיין',
-    dateTime: getDateWithOffset(3, 8, 0),
-    displayTime: true,
+    customerId: 7,
+    source: 'website',
   },
   {
     id: 6,
-    name: 'נועה אלוש',
-    dateTime: getDateWithOffset(10, 10, 30),
-    displayTime: true,
+    customerId: 7,
+    source: 'instagram',
   },
   {
     id: 7,
-    name: 'יהודית וייס',
-    dateTime: getDateWithOffset(1, 10, 0),
-    displayTime: true,
+    customerId: 3,
+    source: 'facebook',
   },
   {
     id: 8,
-    name: 'מיכאל ניסני',
-    dateTime: getDateWithOffset(12, 8, 0),
-    displayTime: true,
+    customerId: 6,
+    source: 'whatsapp',
   },
   {
     id: 9,
-    name: 'יורם עקרי',
-    dateTime: getDateWithOffset(2, 10, 0),
-    displayTime: true,
-  },
-  {
-    id: 10,
-    name: 'מיכאל ניסני',
-    dateTime: getDateWithOffset(8, 8, 0),
-    displayTime: true,
+    customerId: 7,
+    source: 'whatsapp',
   },
 ]

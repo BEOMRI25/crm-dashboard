@@ -1,13 +1,12 @@
-import List from '../List'
 import LeadsListItem from '../ListItems/LeadsListItem'
-import './LeadsList.css'
+import TwoColumnList from '../TwoColumnList'
 
 export default function LeadsList({ leads }) {
   return (
-    <List className='list leads-list'>
+    <TwoColumnList>
       {leads.map(lead => {
         return <LeadsListItem key={lead.id} lead={lead} />
       })}
-    </List>
+    </TwoColumnList>
   )
 }

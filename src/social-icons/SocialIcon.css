@@ -1,0 +1,7 @@
+.social-icon > svg {
+  width: calc(28 * var(--vw-basis));
+  height: calc(28 * var(--vw-basis));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

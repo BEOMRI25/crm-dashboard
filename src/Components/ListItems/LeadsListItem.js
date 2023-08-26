@@ -1,14 +1,16 @@
+import { Link } from 'react-router-dom'
+import SocialIcon from '../../social-icons/SocialIcon'
+import { getCustomer } from '../../utilities'
 import ListItem from '../ListItem'
-import TimeTag from '../Tags/TimeTag'
-import './LeadsListItem.css'
 
 export default function LeadsListItem({ lead }) {
+  const customer = getCustomer(lead.customerId)
   return (
-    <ListItem className='list-item'>
-      <span className='description' title={lead.description}>
-        {lead.name}
-      </span>
-      <TimeTag dateTime={lead.dateTime} displayTime={lead.displayTime} />
+    <ListItem>
+      <Link to={`/customer?id=${lead.customerId}`} title={customer.name}>
+        <span className='description'>{customer.name}</span>
+        <SocialIcon iconName={lead.source} />
+      </Link>
     </ListItem>
   )
 }

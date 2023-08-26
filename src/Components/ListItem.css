@@ -9,6 +9,20 @@
   font-size: var(--text-large);
 }
 
-.list-item > .description {
+.list-item .description {
   width: 100%;
+}
+
+.list-item:has(> a) {
+  display: block;
+  padding: 0;
+}
+
+.list-item > a {
+  display: flex;
+  align-items: center;
+  gap: var(--list-item-gap);
+  padding: calc(12 * var(--vw-basis)) var(--list-item-inline-padding);
+  height: 100%;
+  text-decoration: none;
 }

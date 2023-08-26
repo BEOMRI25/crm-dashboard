@@ -5,4 +5,5 @@
   box-shadow: inset 0 calc(-1 * var(--x-small)) var(--x-small) var(--primary-positive-layer);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }

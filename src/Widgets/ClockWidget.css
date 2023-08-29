@@ -1,0 +1,21 @@
+.widget#clock > .widget-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.time {
+  font-weight: 700;
+  font-size: calc(40 * var(--vw-basis));
+  display: flex;
+  align-items: center;
+}
+
+.day-and-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  font-size: var(--text-large);
+  line-height: 1.5;
+}

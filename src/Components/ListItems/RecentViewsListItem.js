@@ -6,7 +6,7 @@ export default function RecentViewsListItem({ recentView }) {
   const customer = getCustomer(recentView.customerId)
   return (
     <ListItem>
-      <Link to={`/customer?id=${recentView.customerId}`} title={customer.name}>
+      <Link className='link-list-item' to={`/customer?id=${recentView.customerId}`} title={customer.name}>
         <span className='description'>{customer.name}</span>
       </Link>
     </ListItem>

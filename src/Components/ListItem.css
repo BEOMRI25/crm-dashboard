@@ -15,12 +15,12 @@
   width: 100%;
 }
 
-.list-item:has(> a) {
+.list-item:has(> .link-list-item) {
   display: block;
   padding: 0;
 }
 
-.list-item > a {
+.list-item > .link-list-item {
   display: flex;
   align-items: center;
   gap: var(--list-item-gap);

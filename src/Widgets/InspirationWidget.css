@@ -1,0 +1,32 @@
+.widget#inspiration > .widget-content {
+  gap: calc(16 * var(--vw-basis));
+}
+
+.quote {
+  height: 100%;
+  background-image: var(--accent-gradient-horizontal);
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  font-size: calc(20 * var(--vw-basis));
+  line-height: 1.5;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.quote-author {
+  text-align: end;
+  font-size: var(--text-small);
+}
+
+.fact-and-lightbulb {
+  display: flex;
+  align-items: center;
+  gap: var(--medium);
+}
+
+.fact-and-lightbulb > svg {
+  height: calc(32 * var(--vw-basis));
+  width: calc(32 * var(--vw-basis));
+}

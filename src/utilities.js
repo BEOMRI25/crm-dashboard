@@ -63,6 +63,14 @@ export function formatTime(dateTime) {
   return dateTime.toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })
 }
 
+export function formatClockDate(dateTime) {
+  return dateTime.toLocaleDateString('he-IL', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
+export function formatClockDay(dateTime) {
+  return dateTime.toLocaleDateString('he-IL', { weekday: 'long' })
+}
+
 export function getCustomer(id) {
   return customers.find(customer => customer.id == id)
 }

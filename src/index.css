@@ -23,6 +23,7 @@
   --accent-pink: rgba(242, 73, 186, 1);
   --accent-pink-20: rgba(242, 73, 186, 0.2);
   --accent-gradient-diagonal: linear-gradient(to bottom left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
+  --accent-gradient-horizontal: linear-gradient(to left, var(--accent-green), var(--accent-blue), var(--accent-purple), var(--accent-pink));
 
   /* Colors - Neutral */
   --neutral-light: rgba(255, 255, 255, 1);
@@ -76,6 +77,11 @@ body {
 .heading-medium {
   font-size: calc(32 * var(--vw-basis));
   font-weight: 900;
+}
+
+.heading-small {
+  font-size: calc(18 * var(--vw-basis));
+  font-weight: 700;
 }
 
 .general {

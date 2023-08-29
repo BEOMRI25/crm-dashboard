@@ -7,7 +7,7 @@ export default function LeadsListItem({ lead }) {
   const customer = getCustomer(lead.customerId)
   return (
     <ListItem>
-      <Link to={`/customer?id=${lead.customerId}`} title={customer.name}>
+      <Link className='link-list-item' to={`/customer?id=${lead.customerId}`} title={customer.name}>
         <span className='description'>{customer.name}</span>
         <SocialIcon iconName={lead.source} />
       </Link>
